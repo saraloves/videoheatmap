@@ -1,3 +1,43 @@
+### OSX ###
 .DS_Store
-node_modules/
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+### Node ###
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+
+### NPM ###
+npm-debug.log
+node_modules
+
+
+### Bower ###
+public/components
+
+
+### PhPStorm ###
+.idea/
+
+### Db config ###
 db_config.js
