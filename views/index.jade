@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class='youtube-player-wrapper')
+    div(id="youtubeApiPlayer")
+      You need Flash player 8+ and JavaScript enabled to view this video.
+
+  a(class="video-play-button btn" href="#") Play the video
+  a(class="get-time-button btn" href="#") Get the time
