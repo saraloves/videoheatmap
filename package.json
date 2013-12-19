@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/saraloves/videoheatmap.git"
   },
-  "author": "Sara Binns, Lindsey Smith, Joao Stein",
+  "author": "Sara Binns <sarabinns@gmail.com>, Lindsey Smith <lindsey.engineer@gmail.com>, Joao Stein <joaosteing@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/saraloves/videoheatmap/issues"
@@ -20,6 +20,8 @@
   "dependencies": {
     "sequelize": "~2.0.0-beta.2",
     "express": "~3.4.7",
-    "pg": "~2.8.4"
+    "pg": "~2.8.4",
+    "less-middleware": "~0.1.14",
+    "jade": "*"
   }
 }
