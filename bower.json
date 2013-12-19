@@ -1,0 +1,20 @@
+{
+  "name": "videoheatmap",
+  "version": "0.0.1",
+  "authors": [
+    "Sara Binns <sarabinns@gmail.com>, Lindsey Smith <lindsey.engineer@gmail.com>, Joao Stein <joaosteing@gmail.com>"
+  ],
+  "description": "Voting system used on videos to track positive or negative votes on exact moments of the video and generates relevant information about it.",
+  "main": "app.js",
+  "license": "BSD-2-Clause",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.3.13"
+  }
+}
