@@ -15,7 +15,7 @@ d3.json('/api/votes', //get request address from the server?
         .domain([-1, 0, 1])
         .range(["red", "grey", "green"]);
 
-    var svg = d3.select("#chart").append("svg")
+    var svg = d3.select("#youtubeApiPlayer").append("svg")
         .attr("width", width)
         .attr("height", height)
         .append("g");
@@ -24,6 +24,7 @@ d3.json('/api/votes', //get request address from the server?
         .data(data)
         .enter().append("rect")
         .attr("x", function(d) { return (d.second-1) * secondWidth; })
+        .attr("y", 300)
         .attr("width", secondWidth)
         .attr("height", height);
 
