@@ -6,12 +6,16 @@ html
   body
     block content
 
+    //- Templates
+    script(id="videoTemplate", type="text/template")
+      <div id="<%= id %>"></div>
+
     //- Libs
     script(src='/components/jquery/jquery.js')
     script(src='/components/underscore/underscore.js')
     script(src='/components/backbone/backbone.js')
     script(src='/components/swfobject/swfobject/swfobject.js')
-    script(src='/javascripts/youtubeApi.js')
+    //- script(src='/javascripts/youtubeApi.js')
 
     //- Backbone Models
     script(src='/javascripts/models/App.js')
