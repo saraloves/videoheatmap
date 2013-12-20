@@ -1,6 +1,6 @@
 var videos = new App.Collections.VideoPlayersList([
-  { id: '1QBgK0_RbkE' },
-  { id: '2QBgK0_RbkE' },
+  { id: 'T-D1KVIuvjA' },
+  { id: 'cP6VqB4klpQ' },
   { id: '7QBgK0_RbkE' }
 ]);
 
