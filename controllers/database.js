@@ -22,12 +22,7 @@ var sendResponse = function(res, query){
     res.send(votes);
   });
 };
-var newVote = function(json){
-  var voteCreate = {
-    video_id: json.videoID,
-    timestamp: Math.floor(json.second),
-    vote: vote
-  };
+var newVote = function(json, res){
   voteTable.create(voteCreate).success(function() {
     sendResponse(res, {});
   });
@@ -36,13 +31,12 @@ var newVote = function(json){
 voteTable.sync();
 
 module.exports.createVote = function(req, res){
-  var json = '';
-  req.on('data', function(chunk){
-    json += chunk;
-  });
-  req.on('end', function(){
-    newVote(json);
-  });
+  var voteCreate = {
+    video_id: req.body.video_id,
+    timestamp: Math.floor(req.body.timestamp),
+    vote: req.body.vote
+  };
+  newVote(voteCreate, res);
 };
 
 module.exports.getVotes = function(req, res){
