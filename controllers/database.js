@@ -17,18 +17,19 @@ var voteTable = sequelize.define('votes', {
   vote: Sequelize.INTEGER
 });
 
+voteTable.sync();
+
 var sendResponse = function(res, query){
   voteTable.findAll(query, { raw: true }).success(function(votes){
     res.send(votes);
   });
 };
+
 var newVote = function(json, res){
   voteTable.create(voteCreate).success(function() {
     sendResponse(res, {});
   });
 };
-
-voteTable.sync();
 
 module.exports.createVote = function(req, res){
   var voteCreate = {
