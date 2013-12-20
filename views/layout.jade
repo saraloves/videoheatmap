@@ -6,9 +6,18 @@ html
   body
     block content
 
+    //- Libs
     script(src='/components/jquery/jquery.js')
+    script(src='/components/underscore/underscore.js')
     script(src='/components/backbone/backbone.js')
     script(src='/components/swfobject/swfobject/swfobject.js')
-
     script(src='/javascripts/youtubeApi.js')
-    script(src='/javascripts/main.js')
+
+    //- Backbone
+    script(src='/javascripts/models/App.js')
+    script(src='/javascripts/models/VideoPlayer.js')
+    script(src='/javascripts/collections/VideoPlayer.js')
+    script(src='/javascripts/views/VideoPlayer.js')
+
+    //- Init app
+    script(src='/javascripts/app.js')
