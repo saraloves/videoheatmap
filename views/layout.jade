@@ -6,9 +6,28 @@ html
   body
     block content
 
+    //- Templates
+    script(id="videoTemplate", type="text/template")
+      <div id="<%= id %>"></div>
+
+    //- Libs
     script(src='/components/jquery/jquery.js')
+    script(src='/components/underscore/underscore.js')
     script(src='/components/backbone/backbone.js')
     script(src='/components/swfobject/swfobject/swfobject.js')
+    //- script(src='/javascripts/youtubeApi.js')
 
-    script(src='/javascripts/youtubeApi.js')
-    script(src='/javascripts/main.js')
+    //- Backbone Models
+    script(src='/javascripts/models/App.js')
+    script(src='/javascripts/models/Vote.js')
+    script(src='/javascripts/models/VideoPlayer.js')
+
+    //- Backbone Collections
+    script(src='/javascripts/collections/VoteList.js')
+    script(src='/javascripts/collections/VideoPlayersList.js')
+
+    //- Backbone Views
+    script(src='/javascripts/views/VideoPlayer.js')
+
+    //- Init app
+    script(src='/javascripts/app.js')
