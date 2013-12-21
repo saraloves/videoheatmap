@@ -26,7 +26,7 @@ var sendResponse = function(res, query){
 };
 
 var newVote = function(json, res){
-  voteTable.create(voteCreate).success(function() {
+  voteTable.create(json).success(function() {
     sendResponse(res, {});
   });
 };
