@@ -1,17 +1,31 @@
 App.Views.VideoPlayer = Backbone.View.extend({
-  initialize: function () {
-    this.collection.on('add', this.appendVideoTag, this);
-    this.render();
-  },
 
   template: _.template( $('#videoTemplate').html() ),
 
-  render: function () {
-    this.collection.each(this.appendVideoTag, this);
+  className: 'video',
+
+  initialize: function () {
+    this.render();
   },
 
-  appendVideoTag: function (videoPlayer) {
-    this.$el.append(this.template( videoPlayer.toJSON() ));
-    videoPlayer.getVideo();
+  events: {
+    'click .btn': 'createVote'
+  },
+
+  render: function () {
+    this.$el.append(this.template( this.model.toJSON() ));
+  },
+
+  createVote: function (e) {
+    var id = this.model.id;
+    var timeStamp = this.model.player.getCurrentTime();
+    var type = $(e.target).data('vote');
+    var vote = type === 'dislike' ? -1 : 1;
+
+    this.model.attributes.votes.add({
+      videoId: id,
+      timeStamp: timeStamp,
+      vote: vote
+    });
   }
 });

@@ -8,7 +8,9 @@ html
 
     //- Templates
     script(id="videoTemplate", type="text/template")
-      <div id="<%= id %>"></div>
+      div(id != "<%= id %>")
+      a(class="like-button btn" data-vote="like" href="#") Like
+      a(class="dislike-button btn" data-vote="dislike" href="#") Dislike
 
     //- Libs
     script(src='/components/jquery/jquery.js')
@@ -27,6 +29,7 @@ html
     script(src='/javascripts/collections/VideoPlayersList.js')
 
     //- Backbone Views
+    script(src='/javascripts/views/App.js')
     script(src='/javascripts/views/VideoPlayer.js')
 
     //- Init app
