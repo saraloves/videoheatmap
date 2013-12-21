@@ -13,7 +13,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 
 var voteTable = sequelize.define('votes', {
   video_id: Sequelize.STRING,
-  timestamp: Sequelize.DATE,
+  timestamp: Sequelize.INTEGER,
   vote: Sequelize.INTEGER
 });
 
