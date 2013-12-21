@@ -26,7 +26,7 @@ var sendResponse = function(res, query){
 };
 
 var newVote = function(json, res){
-  voteTable.create(voteCreate).success(function() {
+  voteTable.create(json).success(function() {
     sendResponse(res, {});
   });
 };
@@ -41,6 +41,7 @@ module.exports.createVote = function(req, res){
 };
 
 module.exports.getVotes = function(req, res){
+  console.log("Get request")
   var query = {where: {'video_id': req.params.id}, attributes: ['timestamp', 'vote']};
   sendResponse(res, query);
 };
