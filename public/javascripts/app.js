@@ -7,5 +7,3 @@ var videos = new App.Collections.VideoPlayersList([
 var playerView = new App.Views.VideoPlayer({
   collection: videos
 });
-
-playerView.$el.appendTo('body');
