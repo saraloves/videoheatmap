@@ -8,6 +8,7 @@ var routes = require('./routes');
 var database = require('./controllers/database');
 var http = require('http');
 var path = require('path');
+var cors = require('cors');
 
 var app = express();
 
@@ -18,6 +19,7 @@ app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
+app.use(cors());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(require('less-middleware')({ src: __dirname + '/public' }));
