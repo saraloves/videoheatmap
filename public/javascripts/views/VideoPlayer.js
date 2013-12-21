@@ -22,9 +22,10 @@ App.Views.VideoPlayer = Backbone.View.extend({
     var type = $(e.target).data('vote');
     var vote = type === 'dislike' ? -1 : 1;
 
-    this.model.attributes.votes.add({
-      videoId: id,
-      timeStamp: timeStamp,
+
+    this.model.attributes.votes.create({
+      video_id: id,
+      timestamp: timeStamp,
       vote: vote
     });
   }
