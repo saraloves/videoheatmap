@@ -4,6 +4,6 @@ var videos = new App.Collections.VideoPlayersList([
   { id: '7QBgK0_RbkE' }
 ]);
 
-var playerView = new App.Views.VideoPlayer({
+var appView = new App.Views.App({
   collection: videos
 });
