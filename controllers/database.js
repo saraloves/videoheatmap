@@ -41,7 +41,6 @@ module.exports.createVote = function(req, res){
 };
 
 module.exports.getVotes = function(req, res){
-  console.log("Get request")
-  var query = {where: {'video_id': req.params.id}, attributes: ['timestamp', 'vote']};
+  var query = {where: {'video_id': req.params.vidID}, attributes: ['timestamp', 'vote']};
   sendResponse(res, query);
 };
