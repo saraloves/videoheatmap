@@ -9,6 +9,7 @@ html
     //- Templates
     script(id="videoTemplate", type="text/template")
       div(id != "<%= id %>")
+      div(id!="video-<%= id %>")
       a(class="like-button btn" data-vote="like" href="#") Like
       a(class="dislike-button btn" data-vote="dislike" href="#") Dislike
 
@@ -17,7 +18,7 @@ html
     script(src='/components/underscore/underscore.js')
     script(src='/components/backbone/backbone.js')
     script(src='/components/swfobject/swfobject/swfobject.js')
-    //- script(src='/javascripts/youtubeApi.js')
+    script(src='/components/d3/d3.js')
 
     //- Backbone Models
     script(src='/javascripts/models/App.js')
