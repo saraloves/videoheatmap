@@ -16,13 +16,15 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   events: {
-    'click .btn': 'createVote'
+    'click .btn': 'createVote',
+    'click .heatmap-button': 'toggleHeatmap'
   },
 
   render: function () {
     this.$el.append(this.template( this.model.toJSON() ));
   },
   createVote: function (e) {
+    e.preventDefault();
     var id = this.model.id;
     var timeStamp = this.model.player.getCurrentTime();
     var type = $(e.target).data('vote');
@@ -54,7 +56,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
 
       var colorScale = d3.scale.linear()
           .domain([-1, 0, 1])
-          .range(["red", "yellow", "#0cbe0a"]);
+          .range(["red", "purple", "blue"]);
 
       var svg = d3.select("#video-" + videoID).append("svg")
         .attr("width", width)
@@ -72,5 +74,9 @@ App.Views.VideoPlayer = Backbone.View.extend({
         return colorScale(d.values);
       });
     });
+  },
+  toggleHeatmap: function(e){
+    e.preventDefault();
+    this.$el.find("#video-" + this.model.id).toggleClass('hidden');
   }
 });
