@@ -10,7 +10,8 @@ App.Models.VideoPlayer = Backbone.Model.extend({
     var attr = {
       data: url,
       width: this.get('width'),
-      height: '400'
+      height: '400',
+      wmode: 'opaque'
     };
 
     var params = {

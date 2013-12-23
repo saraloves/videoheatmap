@@ -9,9 +9,10 @@ html
     //- Templates
     script(id="videoTemplate", type="text/template")
       div(id != "<%= id %>")
-      div(id!="video-<%= id %>")
+      div(id!="video-<%= id %>" class="hidden heatmap")
       a(class="like-button btn" data-vote="like" href="#") Like
       a(class="dislike-button btn" data-vote="dislike" href="#") Dislike
+      a(class="heatmap-button" href="#") Heatmap
 
     //- Libs
     script(src='/components/jquery/jquery.js')
