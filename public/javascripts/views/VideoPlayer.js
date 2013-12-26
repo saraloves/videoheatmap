@@ -40,17 +40,19 @@ App.Views.VideoPlayer = Backbone.View.extend({
   createHeatmap: function(width, numSeconds, videoID){
     var height = 25;
     var secondWidth = width/numSeconds;
+
     d3.json('/votes/'+ videoID, function(json) {
       var total = d3.nest()
         .rollup(function(d){
           return d.length;
         })
         .entries(json);
+
       var data = d3.nest()
         .key(function(d) { return d.timestamp; })
         .sortKeys(d3.ascending)
         .rollup(function(d){
-          return d3.sum(d,function(g) { return +g.vote;})/total;
+          return (d3.mean(d,function(g) { return +g.vote;}) * ((d.length/total) * 10));
         })
         .entries(json);
 
@@ -66,7 +68,8 @@ App.Views.VideoPlayer = Backbone.View.extend({
       var heatMap = svg.selectAll(".second")
         .data(data)
         .enter().append("rect")
-        .attr("x", function(d) { return (d.key-1) * secondWidth; })
+        .attr("x", function(d) { return (+d.key-1) * secondWidth; })
+        .attr("y", 0)
         .attr("width", secondWidth+1)
         .attr("height", height);
 
