@@ -60,7 +60,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
           .domain([-1, 0, 1])
           .range(["red", "purple", "blue"]);
 
-      var svg = d3.select("#chart").append("svg")
+      var svg = d3.select("#video-" + videoID).append("svg")
         .attr("width", width)
         .attr("height", height)
         .append("g");
