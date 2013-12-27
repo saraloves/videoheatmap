@@ -5,7 +5,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
   className: 'video',
 
   initialize: function () {
-    this.collection.each(this.render, this);
+    this.render();
 
     var self = this;
     window.YTEvents = window.YTEvents || [];
@@ -16,83 +16,18 @@ App.Views.VideoPlayer = Backbone.View.extend({
     window.YTEvents.push(obj);
   },
 
-  render: function (videoPlayer) {
-    this.$el.append(this.template( videoPlayer.toJSON() ));
-    this.$el.appendTo('body');
-    this.createPlugins('upVote', 'downVote', 'showHeat');
-    this.createVideo.call(videoPlayer);
+  render: function () {
+    this.$el.append(this.template( this.model.toJSON() ));
   },
 
   events: {
     'click .btn': 'createVote',
-    'click .vjs-heat-button': 'toggleHeatmap'
+    'click .vjs-heat-button': 'toggleHeatmap',
+    'click .vjs-upvote-button': 'createVote'
   },
 
-  createButtonConstructor: function(player, options){
-    return videojs.Button.extend({
-      init: function(player, options){
-        videojs.Button.call(this, player, options);
-      }
-    });
-  },
-
-  createButton: function(buttonType) {
-    var buttonProperties = {
-      upVote: {class: 'upvote-button', text: 'Upvote Button'},
-      downVote: {class: 'downvote-button', text: 'Downvote Button'},
-      showHeat: {class: 'heat-button', text: 'Show Heat'}
-    }
-    var props = {
-      className: 'vjs-' + buttonProperties[buttonType].class + ' vjs-control',
-      innerHTML: '<div class="vjs-control-content"><span class="vjs-control-text">' + buttonProperties[buttonType].text + '</span></div>',
-      role: 'button',
-      'aria-live': 'polite' 
-    };
-    return videojs.Component.prototype.createEl(null, props);
-  },
-
-  createPlugins: function(){
-    var args = Array.prototype.slice.call(arguments);
-
-    var createPlugin = function (pluginName, pluginType) {
-      var options = { 'el' : this.createButton(pluginType) };
-      var constructorName = 'Create' + pluginType;
-      videojs[constructorName] = this.createButtonConstructor();
-      videojs.plugin(pluginName, function(){
-        var button = new videojs[constructorName](this, options);
-        this.controlBar.el().appendChild(button.el());
-      });
-    };
-
-    for (var i = 0; i < args.length; i++) {
-      var pluginName = args[i] + 'Button';
-      createPlugin.call(this, pluginName, args[i]);
-    }
-  },
-
-  createVideo: function(){
-    videojs(this.id, {
-      plugins : { 
-        showHeatButton : {},
-        upVoteButton : {},
-        downVoteButton: {}
-      }
-    });
-  },
-
-  createVote: function (e) {
-    e.preventDefault();
-    var id = this.model.id;
-    var timeStamp = this.model.player.getCurrentTime();
-    var type = $(e.target).data('vote');
-    var vote = type === 'dislike' ? -1 : 1;
-
-
-    this.model.attributes.votes.create({
-      video_id: id,
-      timestamp: timeStamp,
-      vote: vote
-    });
+  createVote: function(e) {
+    console.log(this);
   },
 
   createHeatmap: function(width, numSeconds, videoID){
