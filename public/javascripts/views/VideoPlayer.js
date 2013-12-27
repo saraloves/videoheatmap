@@ -29,7 +29,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
     'click .vjs-heat-button': 'toggleHeatmap'
   },
 
-  createButton: function(player, options){
+  createButtonConstructor: function(player, options){
     return videojs.Button.extend({
       init: function(player, options){
         videojs.Button.call(this, player, options);
@@ -38,34 +38,51 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   createComponents: function(){
-    videojs.CreateShowHeat = this.createButton();
+    videojs.CreateShowHeat = this.createButtonConstructor();
+    videojs.CreateUpVote = this.createButtonConstructor();
   },
 
-  createShowHeatButton: function(){
+  createButton: function(buttonType) {
+    var buttonProperties = {
+      upVote: {class: 'upvote-button', text: 'Upvote Button'},
+      showHeat: {class: 'heat-button', text: 'Show Heat'}
+    }
     var props = {
-      className: 'vjs-heat-button vjs-control',
-      innerHTML: '<div class="vjs-control-content"><span class="vjs-control-text">' + ('Show Heat') + '</span></div>',
+      className: 'vjs-' + buttonProperties[buttonType].class + ' vjs-control',
+      innerHTML: '<div class="vjs-control-content"><span class="vjs-control-text">' + buttonProperties[buttonType].text + '</span></div>',
       role: 'button',
-      'aria-live': 'polite', 
+      'aria-live': 'polite' 
     };
     return videojs.Component.prototype.createEl(null, props);
   },
 
   createShowHeatPlugin: function(){
-    var options = { 'el' : this.createShowHeatButton() };
-    videojs.plugin('showHeatBtn', function() {
-      var showHeatBtn = new videojs.CreateShowHeat(this, options);
-      this.controlBar.el().appendChild(showHeatBtn.el());
+    var options = { 'el' : this.createButton('showHeat') };
+    videojs.plugin('showHeatButton', function() {
+      var showHeatButton = new videojs.CreateShowHeat(this, options);
+      this.controlBar.el().appendChild(showHeatButton.el());
+    });
+  },
+
+  createUpVotePlugin: function(){
+    var options = { 'el' : this.createButton('upVote') };
+    videojs.plugin('upVoteButton', function() {
+      var upVoteButton = new videojs.CreateUpVote(this, options);
+      this.controlBar.el().appendChild(upVoteButton.el());
     });
   },
 
   createPlugins: function(){
     this.createShowHeatPlugin();
+    this.createUpVotePlugin();
   },
 
   createVideo: function(){
     videojs(this.id, {
-      plugins : { showHeatBtn : {} }
+      plugins : { 
+        showHeatButton : {},
+        upVoteButton : {}
+         }
     });
   },
 
