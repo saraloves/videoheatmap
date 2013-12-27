@@ -29,7 +29,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
     'click .vjs-heat-button': 'toggleHeatmap'
   },
 
-  createHeat: function(player, options){
+  createButton: function(player, options){
     return videojs.Button.extend({
       init: function(player, options){
         videojs.Button.call(this, player, options);
@@ -38,7 +38,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   createComponents: function(){
-    videojs.ShowHeat = this.createHeat();
+    videojs.CreateShowHeat = this.createButton();
   },
 
   createShowHeatButton: function(){
@@ -53,9 +53,9 @@ App.Views.VideoPlayer = Backbone.View.extend({
 
   createShowHeatPlugin: function(){
     var options = { 'el' : this.createShowHeatButton() };
-    videojs.plugin('showHeat', function() {
-      var showHeat = new videojs.ShowHeat(this, options);
-      this.controlBar.el().appendChild(showHeat.el());
+    videojs.plugin('showHeatBtn', function() {
+      var showHeatBtn = new videojs.CreateShowHeat(this, options);
+      this.controlBar.el().appendChild(showHeatBtn.el());
     });
   },
 
@@ -65,7 +65,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
 
   createVideo: function(){
     videojs(this.id, {
-      plugins : { showHeat : {} }
+      plugins : { showHeatBtn : {} }
     });
   },
 
