@@ -9,12 +9,10 @@ html
     block content
 
     //- Templates
-    script(id="videoTemplate", type="text/template")
-      div(id != "<%= id %>")
-      div(id!="video-<%= id %>" class="hidden heatmap")
-      a(class="like-button btn" data-vote="like" href="#") Like
-      a(class="dislike-button btn" data-vote="dislike" href="#") Dislike
-      a(class="heatmap-button" href="#") Heatmap
+    script(id="videoTemplate" type="text/template")
+      video(id != "<%= id %>" class="video-js vjs-default-skin" width="640" height="480" controls)
+        source(type="video/mp4" src!= "<%= url %>" + '.mp4')
+        source(type="video/webm" src!= "<%= url %>" + '.webm')
 
     //- Libs
     script(src='/components/jquery/jquery.js')

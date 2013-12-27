@@ -1,7 +1,5 @@
 var videos = new App.Collections.VideoPlayersList([
-  { id: 'T-D1KVIuvjA' },
-  { id: 'cP6VqB4klpQ' },
-  { id: '7QBgK0_RbkE' }
+  { url: 'http://video-js.zencoder.com/oceans-clip', id: 'aaaa' }
 ]);
 
 var appView = new App.Views.App({

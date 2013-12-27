@@ -5,20 +5,7 @@ App.Models.VideoPlayer = Backbone.Model.extend({
   },
 
   getVideo: function () {
-    var url = 'http://www.youtube.com/v/' + this.id + '?enablejsapi=1&playerapiid=' + this.id + '&version=3';
-
-    var attr = {
-      data: url,
-      width: this.get('width'),
-      height: '400',
-      wmode: 'opaque'
-    };
-
-    var params = {
-      allowScriptAccess: 'always'
-    };
-
-    this.player = swfobject.createSWF(attr, params, this.id);
+    this.player = document.getElementById(this.id);
 
     //hack for Youtube API
     window.onYouTubePlayerReady = function(id) {
