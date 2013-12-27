@@ -5,24 +5,70 @@ App.Views.VideoPlayer = Backbone.View.extend({
   className: 'video',
 
   initialize: function () {
-    this.render();
+    this.collection.each(this.render, this);
+
     var self = this;
-    window.YTEvents = window.YTEvents || []; //hack to play nice with the Youtube API
+    window.YTEvents = window.YTEvents || [];
     var obj = {};
-    obj[this.model.id] = function(){
+    obj[this.id] = function(){
       self.createHeatmap(self.model.get('width'),self.model.player.getDuration(), self.model.id);
     };
     window.YTEvents.push(obj);
   },
 
-  events: {
-    'click .btn': 'createVote',
-    'click .heatmap-button': 'toggleHeatmap'
+  render: function (videoPlayer) {
+    this.$el.append(this.template( videoPlayer.toJSON() ));
+    this.$el.appendTo('body');
+    this.createPlugins();
+    this.createComponents();
+    this.createVideo.call(videoPlayer);
   },
 
-  render: function () {
-    this.$el.append(this.template( this.model.toJSON() ));
+  events: {
+    'click .btn': 'createVote',
+    'click .vjs-heat-button': 'toggleHeatmap'
   },
+
+  createHeat: function(player, options){
+    return videojs.Button.extend({
+      init: function(player, options){
+        videojs.Button.call(this, player, options);
+      }
+    });
+  },
+
+  createComponents: function(){
+    videojs.ShowHeat = this.createHeat();
+  },
+
+  createShowHeatButton: function(){
+    var props = {
+      className: 'vjs-heat-button vjs-control',
+      innerHTML: '<div class="vjs-control-content"><span class="vjs-control-text">' + ('Show Heat') + '</span></div>',
+      role: 'button',
+      'aria-live': 'polite', 
+    };
+    return videojs.Component.prototype.createEl(null, props);
+  },
+
+  createShowHeatPlugin: function(){
+    var options = { 'el' : this.createShowHeatButton() };
+    videojs.plugin('showHeat', function() {
+      var showHeat = new videojs.ShowHeat(this, options);
+      this.controlBar.el().appendChild(showHeat.el());
+    });
+  },
+
+  createPlugins: function(){
+    this.createShowHeatPlugin();
+  },
+
+  createVideo: function(){
+    videojs(this.id, {
+      plugins : { showHeat : {} }
+    });
+  },
+
   createVote: function (e) {
     e.preventDefault();
     var id = this.model.id;
@@ -37,6 +83,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       vote: vote
     });
   },
+
   createHeatmap: function(width, numSeconds, videoID){
     var height = 25;
     var secondWidth = width/numSeconds;
@@ -78,8 +125,11 @@ App.Views.VideoPlayer = Backbone.View.extend({
       });
     });
   },
+
   toggleHeatmap: function(e){
+    console.log("HI");
     e.preventDefault();
-    this.$el.find("#video-" + this.model.id).toggleClass('hidden');
+
+    // this.$el.find("#video-" + this.model.id).toggleClass('hidden');
   }
 });
