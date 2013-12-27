@@ -19,7 +19,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
   render: function (videoPlayer) {
     this.$el.append(this.template( videoPlayer.toJSON() ));
     this.$el.appendTo('body');
-    this.createPlugins();
+    this.createPlugins('upVote', 'downVote', 'showHeat');
     this.createComponents();
     this.createVideo.call(videoPlayer);
   },
@@ -38,9 +38,9 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   createComponents: function(){
-    videojs.CreateShowHeat = this.createButtonConstructor();
-    videojs.CreateUpVote = this.createButtonConstructor();
-    videojs.CreateDownVote = this.createButtonConstructor();
+    videojs.CreateshowHeat = this.createButtonConstructor();
+    videojs.CreateupVote = this.createButtonConstructor();
+    videojs.CreatedownVote = this.createButtonConstructor();
   },
 
   createButton: function(buttonType) {
@@ -58,34 +58,22 @@ App.Views.VideoPlayer = Backbone.View.extend({
     return videojs.Component.prototype.createEl(null, props);
   },
 
-  createShowHeatPlugin: function(){
-    var options = { 'el' : this.createButton('showHeat') };
-    videojs.plugin('showHeatButton', function() {
-      var showHeatButton = new videojs.CreateShowHeat(this, options);
-      this.controlBar.el().appendChild(showHeatButton.el());
-    });
-  },
-
-  createUpVotePlugin: function(){
-    var options = { 'el' : this.createButton('upVote') };
-    videojs.plugin('upVoteButton', function() {
-      var upVoteButton = new videojs.CreateUpVote(this, options);
-      this.controlBar.el().appendChild(upVoteButton.el());
-    });
-  },
-
-  createDownVotePlugin: function(){
-    var options = { 'el' : this.createButton('downVote') };
-    videojs.plugin('downVoteButton', function() {
-      var downVoteButton = new videojs.CreateDownVote(this, options);
-      this.controlBar.el().appendChild(downVoteButton.el());
-    });
-  },
-
   createPlugins: function(){
-    this.createShowHeatPlugin();
-    this.createUpVotePlugin();
-    this.createDownVotePlugin();
+    var args = Array.prototype.slice.call(arguments);
+
+    var createPlugin = function (pluginName, pluginType) {
+      var options = { 'el' : this.createButton(pluginType) };
+      var constructorName = 'Create' + pluginType;
+      videojs.plugin(pluginName, function(){
+        var button = new videojs[constructorName](this, options);
+        this.controlBar.el().appendChild(button.el());
+      });
+    };
+
+    for (var i = 0; i < args.length; i++) {
+      var pluginName = args[i] + 'Button';
+      createPlugin.call(this, pluginName, args[i]);
+    }
   },
 
   createVideo: function(){
