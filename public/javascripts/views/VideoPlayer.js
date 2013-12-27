@@ -20,7 +20,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
     this.$el.append(this.template( videoPlayer.toJSON() ));
     this.$el.appendTo('body');
     this.createPlugins('upVote', 'downVote', 'showHeat');
-    this.createComponents();
     this.createVideo.call(videoPlayer);
   },
 
@@ -35,12 +34,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
         videojs.Button.call(this, player, options);
       }
     });
-  },
-
-  createComponents: function(){
-    videojs.CreateshowHeat = this.createButtonConstructor();
-    videojs.CreateupVote = this.createButtonConstructor();
-    videojs.CreatedownVote = this.createButtonConstructor();
   },
 
   createButton: function(buttonType) {
@@ -64,6 +57,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
     var createPlugin = function (pluginName, pluginType) {
       var options = { 'el' : this.createButton(pluginType) };
       var constructorName = 'Create' + pluginType;
+      videojs[constructorName] = this.createButtonConstructor();
       videojs.plugin(pluginName, function(){
         var button = new videojs[constructorName](this, options);
         this.controlBar.el().appendChild(button.el());
