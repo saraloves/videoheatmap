@@ -40,11 +40,13 @@ App.Views.VideoPlayer = Backbone.View.extend({
   createComponents: function(){
     videojs.CreateShowHeat = this.createButtonConstructor();
     videojs.CreateUpVote = this.createButtonConstructor();
+    videojs.CreateDownVote = this.createButtonConstructor();
   },
 
   createButton: function(buttonType) {
     var buttonProperties = {
       upVote: {class: 'upvote-button', text: 'Upvote Button'},
+      downVote: {class: 'downvote-button', text: 'Downvote Button'},
       showHeat: {class: 'heat-button', text: 'Show Heat'}
     }
     var props = {
@@ -72,17 +74,27 @@ App.Views.VideoPlayer = Backbone.View.extend({
     });
   },
 
+  createDownVotePlugin: function(){
+    var options = { 'el' : this.createButton('downVote') };
+    videojs.plugin('downVoteButton', function() {
+      var downVoteButton = new videojs.CreateDownVote(this, options);
+      this.controlBar.el().appendChild(downVoteButton.el());
+    });
+  },
+
   createPlugins: function(){
     this.createShowHeatPlugin();
     this.createUpVotePlugin();
+    this.createDownVotePlugin();
   },
 
   createVideo: function(){
     videojs(this.id, {
       plugins : { 
         showHeatButton : {},
-        upVoteButton : {}
-         }
+        upVoteButton : {},
+        downVoteButton: {}
+      }
     });
   },
 
