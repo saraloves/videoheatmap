@@ -23,11 +23,23 @@ App.Views.VideoPlayer = Backbone.View.extend({
   events: {
     'click .btn': 'createVote',
     'click .vjs-heat-button': 'toggleHeatmap',
-    'click .vjs-upvote-button': 'createVote'
+    'click .vjs-upvote-button': 'createVote',
+    'click .vjs-downvote-button': 'createVote'
   },
 
   createVote: function(e) {
-    console.log(this);
+    var id = this.model.id;
+    var timeStamp = this.model.attributes.videoPlayer.currentTime();
+    var type = $(e.target).find('.vjs-control-content').data('vote');
+    var vote = type === 'downVote' ? -1 : 1;
+
+    this.model.attributes.votes.create({
+      video_id: id,
+      timestamp: timeStamp,
+      vote: vote
+    });
+
+    e.preventDefault();
   },
 
   createHeatmap: function(width, numSeconds, videoID){
