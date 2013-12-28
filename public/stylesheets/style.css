@@ -26,12 +26,32 @@
 .how-to-use {
   width: 960px;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
-.how-to-use .instructions {
+.instructions {
   float: left;
 }
-.how-to-use .video-wrapper {
+.video-wrapper {
   float: right;
+}
+.team {
+  width: 760px;
+  margin: 0 auto;
+}
+.team h1 {
+  margin-top: 0;
+}
+.member {
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+}
+.member ul {
+  list-style: none;
+  padding: 0;
+}
+.member a {
+  text-decoration: none;
 }
 .heatmap-button {
   display: inline-block;
@@ -76,7 +96,4 @@ svg {
 }
 .vjs-default-skin .vjs-control-bar {
   height: 4em !important;
-}
-.video {
-  margin-bottom: 25px;
 }
