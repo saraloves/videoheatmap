@@ -1,12 +1,16 @@
-.btn {
-  display: inline-block;
-  background: #ccc;
-  padding: 10px;
-  text-decoration: none;
-  margin-left: 5px;
+.hidden {
+  visibility: hidden;
 }
-.btn:first-of-type {
-  margin-left: 0;
+.logo {
+  width: 460px;
+  margin: 0 auto;
+}
+.main-header {
+  text-align: center;
+}
+.main-header p {
+  width: 700px;
+  margin: 0 auto;
 }
 .heatmap-button {
   display: inline-block;
@@ -51,9 +55,6 @@ svg {
 }
 .vjs-default-skin .vjs-control-bar {
   height: 4em !important;
-}
-.hidden {
-  visibility: hidden;
 }
 .video {
   margin-bottom: 25px;
