@@ -53,5 +53,5 @@ svg {
   height: 4em !important;
 }
 .hidden {
-  display: none;
+  visibility: hidden;
 }
