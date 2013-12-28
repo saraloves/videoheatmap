@@ -55,3 +55,6 @@ svg {
 .hidden {
   visibility: hidden;
 }
+.video {
+  margin-bottom: 25px;
+}

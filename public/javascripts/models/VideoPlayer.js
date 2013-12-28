@@ -52,7 +52,6 @@ App.Models.VideoPlayer = Backbone.Model.extend({
         heatMapButton: {}
       }
     });
-    console.log("this.id", this.id);
     this.set('videoPlayer', videoPlayer);
   },
 

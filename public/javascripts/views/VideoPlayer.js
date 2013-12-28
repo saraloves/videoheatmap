@@ -47,9 +47,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   createHeatmap: function(width, numSeconds, videoID){
-    console.log("width:", width);
-    console.log("numSeconds:", numSeconds);
-    console.log("videoId:", videoID);
     var height = 10;
     var secondWidth = width/numSeconds;
 
