@@ -7,38 +7,47 @@ App.Views.VideoPlayer = Backbone.View.extend({
   initialize: function () {
     this.render();
     var self = this;
-    window.YTEvents = window.YTEvents || []; //hack to play nice with the Youtube API
-    var obj = {};
-    obj[this.model.id] = function(){
-      self.createHeatmap(self.model.get('width'),self.model.player.getDuration(), self.model.id);
-    };
-    window.YTEvents.push(obj);
-  },
+    this.$('video').on('loadedmetadata', function(){
+      self.createHeatmap.call(self, self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
+    });
 
-  events: {
-    'click .btn': 'createVote',
-    'click .heatmap-button': 'toggleHeatmap'
+    // var self = this;
+    // window.YTEvents = window.YTEvents || [];
+    // var obj = {};
+    // obj[this.id] = function(){
+    //   self.createHeatmap(self.model.get('width'),self.model.player.duration(), self.model.id);
+    // };
+    // window.YTEvents.push(obj);
   },
 
   render: function () {
     this.$el.append(this.template( this.model.toJSON() ));
   },
-  createVote: function (e) {
-    e.preventDefault();
-    var id = this.model.id;
-    var timeStamp = this.model.player.getCurrentTime();
-    var type = $(e.target).data('vote');
-    var vote = type === 'dislike' ? -1 : 1;
 
+  events: {
+    'click .btn': 'createVote',
+    'click .vjs-heat-button': 'toggleHeatmap',
+    'click .vjs-upvote-button': 'createVote',
+    'click .vjs-downvote-button': 'createVote'
+  },
+
+  createVote: function(e) {
+    var id = this.model.id;
+    var timeStamp = this.model.attributes.videoPlayer.currentTime();
+    var type = $(e.target).find('.vjs-control-content').data('vote');
+    var vote = type === 'downVote' ? -1 : 1;
 
     this.model.attributes.votes.create({
       video_id: id,
       timestamp: timeStamp,
       vote: vote
     });
+
+    e.preventDefault();
   },
+
   createHeatmap: function(width, numSeconds, videoID){
-    var height = 25;
+    var height = 10;
     var secondWidth = width/numSeconds;
 
     d3.json('/votes/'+ videoID, function(json) {
@@ -60,7 +69,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
           .domain([-1, 0, 1])
           .range(["red", "purple", "blue"]);
 
-      var svg = d3.select("#video-" + videoID).append("svg")
+      var svg = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
         .attr("width", width)
         .attr("height", height)
         .append("g");
@@ -78,8 +87,9 @@ App.Views.VideoPlayer = Backbone.View.extend({
       });
     });
   },
+
   toggleHeatmap: function(e){
+    this.$el.find("#" + this.model.id).find('.vjs-heatmap').toggleClass('hidden');
     e.preventDefault();
-    this.$el.find("#video-" + this.model.id).toggleClass('hidden');
   }
 });
