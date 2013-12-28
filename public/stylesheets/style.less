@@ -11,11 +11,21 @@
 	visibility: hidden;
 }
 
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
 //-----------------------------------------------------------------------
 //
 //  Base » Header
 //
-//  Contains all general style.
+//  Contains all header style.
 //
 //-----------------------------------------------------------------------
 
@@ -27,11 +37,32 @@
 
 .main-header {
   text-align: center;
+  margin-bottom: 80px;
   p {
     width: 700px;
     margin: 0 auto;
   }
 }
+
+//-----------------------------------------------------------------------
+//
+//  Base » How to use
+//
+//  Contains all how to use style.
+//
+//-----------------------------------------------------------------------
+
+.how-to-use {
+  width: 960px;
+  margin: 0 auto;
+  .instructions {
+    float: left;
+  }
+  .video-wrapper {
+    float: right;
+  }
+}
+
 
 .heatmap-button {
   display: inline-block;

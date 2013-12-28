@@ -1,16 +1,37 @@
 .hidden {
   visibility: hidden;
 }
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
 .logo {
   width: 460px;
   margin: 0 auto;
 }
 .main-header {
   text-align: center;
+  margin-bottom: 80px;
 }
 .main-header p {
   width: 700px;
   margin: 0 auto;
+}
+.how-to-use {
+  width: 960px;
+  margin: 0 auto;
+}
+.how-to-use .instructions {
+  float: left;
+}
+.how-to-use .video-wrapper {
+  float: right;
 }
 .heatmap-button {
   display: inline-block;
