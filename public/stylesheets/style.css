@@ -36,6 +36,8 @@ body {
   float: left;
 }
 .video-wrapper {
+  width: 640px;
+  height: 480px;
   float: right;
 }
 .team {
