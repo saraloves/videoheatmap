@@ -6,14 +6,18 @@ App.Views.VideoPlayer = Backbone.View.extend({
 
   initialize: function () {
     this.render();
-
     var self = this;
-    window.YTEvents = window.YTEvents || [];
-    var obj = {};
-    obj[this.id] = function(){
-      self.createHeatmap(self.model.get('width'),self.model.player.getDuration(), self.model.id);
-    };
-    window.YTEvents.push(obj);
+    this.$('video').on('loadedmetadata', function(){
+      self.createHeatmap.call(self, self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
+    });
+
+    // var self = this;
+    // window.YTEvents = window.YTEvents || [];
+    // var obj = {};
+    // obj[this.id] = function(){
+    //   self.createHeatmap(self.model.get('width'),self.model.player.duration(), self.model.id);
+    // };
+    // window.YTEvents.push(obj);
   },
 
   render: function () {
@@ -43,7 +47,10 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   createHeatmap: function(width, numSeconds, videoID){
-    var height = 25;
+    console.log("width:", width);
+    console.log("numSeconds:", numSeconds);
+    console.log("videoId:", videoID);
+    var height = 10;
     var secondWidth = width/numSeconds;
 
     d3.json('/votes/'+ videoID, function(json) {
@@ -65,7 +72,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
           .domain([-1, 0, 1])
           .range(["red", "purple", "blue"]);
 
-      var svg = d3.select("#video-" + videoID).append("svg")
+      var svg = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
         .attr("width", width)
         .attr("height", height)
         .append("g");
@@ -85,9 +92,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   toggleHeatmap: function(e){
-    console.log("HI");
-    e.preventDefault();
-
     this.$el.find("#" + this.model.id).find('.vjs-heatmap').toggleClass('hidden');
+    e.preventDefault();
   }
 });

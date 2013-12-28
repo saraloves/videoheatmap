@@ -1,7 +1,7 @@
 App.Models.VideoPlayer = Backbone.Model.extend({
   initialize: function () {
     this.set('votes', new App.Collections.VoteList);
-    this.set('width', 780);
+    this.set('width', 640);
   },
 
   getVideo: function () {
@@ -52,6 +52,7 @@ App.Models.VideoPlayer = Backbone.Model.extend({
         heatMapButton: {}
       }
     });
+    console.log("this.id", this.id);
     this.set('videoPlayer', videoPlayer);
   },
 

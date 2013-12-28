@@ -15,7 +15,7 @@ App.Views.App = Backbone.View.extend({
     var playerView = new App.Views.VideoPlayer({
       model: videoPlayer
     });
-    
+
     playerView.$el.appendTo('body');
     videoPlayer.getVideo();
   }
