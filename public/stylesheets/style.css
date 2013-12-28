@@ -15,9 +15,6 @@
   text-decoration: none;
   margin-left: 5px;
 }
-.hidden {
-  display: none;
-}
 .video {
   position: relative;
 }
@@ -54,4 +51,7 @@ svg {
 }
 .vjs-default-skin .vjs-control-bar {
   height: 4em !important;
+}
+.hidden {
+  display: none;
 }

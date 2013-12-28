@@ -88,6 +88,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
     console.log("HI");
     e.preventDefault();
 
-    // this.$el.find("#video-" + this.model.id).toggleClass('hidden');
+    this.$el.find("#" + this.model.id).find('.vjs-heatmap').toggleClass('hidden');
   }
 });

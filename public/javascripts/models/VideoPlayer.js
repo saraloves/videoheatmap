@@ -5,7 +5,8 @@ App.Models.VideoPlayer = Backbone.Model.extend({
   },
 
   getVideo: function () {
-    this.createPlugins('upVote', 'downVote', 'showHeat');
+    this.createPlugins('upVote', 'downVote', 'showHeat', 'heatMap');
+
     this.createVideo.call(this);
 
     //hack for Youtube API
@@ -28,7 +29,11 @@ App.Models.VideoPlayer = Backbone.Model.extend({
       videojs[constructorName] = this.createButtonConstructor();
       videojs.plugin(pluginName, function(){
         var button = new videojs[constructorName](this, options);
-        this.controlBar.el().appendChild(button.el());
+        if (pluginType === 'heatMap') {
+          this.controlBar.el().insertBefore(button.el(), this.controlBar.el().childNodes[0]);
+        } else {
+          this.controlBar.el().appendChild(button.el());
+        }
       });
     };
 
@@ -43,7 +48,8 @@ App.Models.VideoPlayer = Backbone.Model.extend({
       plugins : { 
         showHeatButton : {},
         upVoteButton : {},
-        downVoteButton: {}
+        downVoteButton: {},
+        heatMapButton: {}
       }
     });
     this.set('videoPlayer', videoPlayer);
@@ -61,7 +67,8 @@ App.Models.VideoPlayer = Backbone.Model.extend({
     var buttonProperties = {
       upVote: {class: 'upvote-button', text: 'Upvote Button'},
       downVote: {class: 'downvote-button', text: 'Downvote Button'},
-      showHeat: {class: 'heat-button', text: 'Show Heat'}
+      showHeat: {class: 'heat-button', text: 'Show Heat'},
+      heatMap: {class: 'heatmap', text: 'Heat'}
     }
     var props = {
       className: 'vjs-' + buttonProperties[buttonType].class + ' vjs-control',
@@ -69,6 +76,11 @@ App.Models.VideoPlayer = Backbone.Model.extend({
       role: 'button',
       'aria-live': 'polite' 
     };
+
+    if (buttonType === "heatMap") {
+      props.className = 'vjs-' + buttonProperties[buttonType].class + ' vjs-control hidden'
+    }
+
     return videojs.Component.prototype.createEl(null, props);
   }
 
