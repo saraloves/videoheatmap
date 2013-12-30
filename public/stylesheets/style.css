@@ -4,16 +4,6 @@ body {
 .hidden {
   visibility: hidden;
 }
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.clearfix:after {
-  clear: both;
-}
 .logo {
   width: 460px;
   margin: 0 auto;
@@ -34,6 +24,10 @@ body {
 }
 .instructions {
   float: left;
+  overflow: hidden;
+}
+.instructions ul {
+  list-style: none;
 }
 .video-wrapper {
   width: 640px;

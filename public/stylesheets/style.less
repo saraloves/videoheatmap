@@ -14,15 +14,6 @@ body {
 	visibility: hidden;
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
 
 //-----------------------------------------------------------------------
 //
@@ -64,6 +55,10 @@ body {
 
 .instructions {
   float: left;
+  overflow: hidden;
+  ul {
+    list-style: none;
+  }
 }
 .video-wrapper {
   width: 640px;
