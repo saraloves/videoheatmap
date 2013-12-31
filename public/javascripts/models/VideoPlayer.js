@@ -8,16 +8,6 @@ App.Models.VideoPlayer = Backbone.Model.extend({
     this.createPlugins('upVote', 'downVote', 'showHeat', 'heatMap');
 
     this.createVideo.call(this);
-
-    //hack for Youtube API
-    window.onYouTubePlayerReady = function(id) {
-      var events = window.YTEvents;
-      for(var i = 0; i < events.length; i++){
-        if(events[i][id]){
-          events[i][id]();
-        }
-      }
-    }
   },
 
   createPlugins: function(){
@@ -45,7 +35,7 @@ App.Models.VideoPlayer = Backbone.Model.extend({
 
   createVideo: function(){
     var videoPlayer = videojs(this.id, {
-      plugins : { 
+      plugins : {
         showHeatButton : {},
         upVoteButton : {},
         downVoteButton: {},
@@ -74,7 +64,7 @@ App.Models.VideoPlayer = Backbone.Model.extend({
       className: 'vjs-' + buttonProperties[buttonType].class + ' vjs-control',
       innerHTML: '<div class="vjs-control-content"><span class="vjs-control-text">' + buttonProperties[buttonType].text + '</span></div>',
       role: 'button',
-      'aria-live': 'polite' 
+      'aria-live': 'polite'
     };
 
     if (buttonType === "heatMap") {
