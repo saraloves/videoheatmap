@@ -6,7 +6,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
   host: config.host,
   port: config.port,
   logging: config.logging,
-  maxConcurrentQueries: config.maxConcurrentQueries,
+  pool: { maxConnections: 10, maxIdleTime: 30},
   dialect: config.dialect,
   native: config.native
 });
