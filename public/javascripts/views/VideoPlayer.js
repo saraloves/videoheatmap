@@ -10,14 +10,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
     this.$('video').on('loadedmetadata', function(){
       self.createHeatmap.call(self, self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
     });
-
-    // var self = this;
-    // window.YTEvents = window.YTEvents || [];
-    // var obj = {};
-    // obj[this.id] = function(){
-    //   self.createHeatmap(self.model.get('width'),self.model.player.duration(), self.model.id);
-    // };
-    // window.YTEvents.push(obj);
   },
 
   render: function () {
@@ -25,7 +17,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   events: {
-    'click .btn': 'createVote',
     'click .vjs-heat-button': 'toggleHeatmap',
     'click .vjs-upvote-button': 'createVote',
     'click .vjs-downvote-button': 'createVote'
@@ -34,8 +25,8 @@ App.Views.VideoPlayer = Backbone.View.extend({
   createVote: function(e) {
     var id = this.model.id;
     var timeStamp = this.model.attributes.videoPlayer.currentTime();
-    var type = $(e.target).find('.vjs-control-content').data('vote');
-    var vote = type === 'downVote' ? -1 : 1;
+    var type = $(e.target).find('.vjs-control-content').context.className;
+    var vote = type === 'vjs-upvote-button vjs-control' ? 1 : -1;
 
     this.model.attributes.votes.create({
       video_id: id,
@@ -47,6 +38,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   createHeatmap: function(width, numSeconds, videoID){
+    width = width*2;
     var height = 10;
     var secondWidth = width/numSeconds;
 
@@ -61,30 +53,73 @@ App.Views.VideoPlayer = Backbone.View.extend({
         .key(function(d) { return d.timestamp; })
         .sortKeys(d3.ascending)
         .rollup(function(d){
-          return (d3.mean(d,function(g) { return +g.vote;}) * ((d.length/total) * 10));
+          return [d3.mean(d,function(g) { return +g.vote;}), (d.length/total)];
         })
         .entries(json);
 
       var colorScale = d3.scale.linear()
           .domain([-1, 0, 1])
-          .range(["red", "purple", "blue"]);
+          .range(["blue", "purple", "red"]);
 
       var svg = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
-        .attr("width", width)
-        .attr("height", height)
+          .attr("width", width/2)
+          .attr("height", height)
         .append("g");
+
+      var feMerge = svg.append("svg:filter")
+          .attr("id", "glow")
+        .append("svg:feGaussianBlur")
+          .attr("stdDeviation", 5)
+          .attr("result", "coloredBlur")
+        .append("feMerge");
+
+      feMerge.append("feMergeNode")
+          .attr("in", "coloredBlur");
+      feMerge.append("feMergeNode")
+          .attr("in", "SourceGraphic");
+
+      var gradient = svg.append("svg:linearGradient")
+          .attr("id", "Gradient");
+      gradient.append("svg:stop")
+          .attr("offset", 0)
+          .attr("stop-color", "white")
+          .attr("stop-opacity", 0);
+      gradient.append("svg:stop")
+          .attr("offset", 0.5)
+          .attr("stop-color", "white")
+          .attr("stop-opacity", 1);
+      gradient.append("svg:stop")
+          .attr("offset", 1)
+          .attr("stop-color", "white")
+          .attr("stop-opacity", 0);
+
+      svg.selectAll(".masks")
+        .data(data).enter()
+        .append("svg:mask")
+          .attr("id", function(d) { return "Mask" + d.key; })
+        .append("svg:rect")
+          .attr("x", function(d) { return (+d.key * secondWidth)/2; })
+          .attr("y",0)
+          .attr("width",secondWidth*2)
+          .attr("height",height)
+          .attr("fill", "url(#Gradient)");
 
       var heatMap = svg.selectAll(".second")
         .data(data)
         .enter().append("rect")
-        .attr("x", function(d) { return (+d.key-1) * secondWidth; })
-        .attr("y", 0)
-        .attr("width", secondWidth+1)
-        .attr("height", height);
+          .attr("x", function(d) { return (+d.key * secondWidth)/2; })
+          .attr("y", 0)
+          .attr("width", secondWidth*2)
+          .attr("height", height)
+          .attr("mask", function(d) { return "url(#Mask"+ d.key + ")" });
 
       heatMap.style("fill", function(d) {
-        return colorScale(d.values);
+        return colorScale(d.values[0]);
       });
+      heatMap.style("opacity", function(d){
+        return d.values[1]*10;
+      })
+      heatMap.attr("filter", "url(#glow)");
     });
   },
 
