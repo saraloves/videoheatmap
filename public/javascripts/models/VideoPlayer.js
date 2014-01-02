@@ -61,10 +61,10 @@ App.Models.VideoPlayer = Backbone.Model.extend({
 
   createButton: function(buttonType) {
     var buttonProperties = {
-      upVote: {class: 'upvote-button', text: 'Upvote Button'},
-      downVote: {class: 'downvote-button', text: 'Downvote Button'},
-      showHeat: {class: 'heat-button', text: 'Show Heat'},
-      heatMap: {class: 'heatmap', text: 'Heat'}
+      upVote: { class: 'upvote-button', text: 'Upvote Button' },
+      downVote: { class: 'downvote-button', text: 'Downvote Button' },
+      showHeat: { class: 'heat-button', text: 'Show Heat' },
+      heatMap: { class: 'heatmap', text: 'Heat' }
     };
 
     var props = {
