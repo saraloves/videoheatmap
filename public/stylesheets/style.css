@@ -5,6 +5,12 @@ body {
   background-color: #eee;
   font-family: 'Varela Round', sans-serif;
 }
+a {
+  color: #57534a;
+}
+a:hover {
+  color: #ff2a00;
+}
 .main-header {
   margin-bottom: 80px;
   margin-top: 40px;
@@ -35,11 +41,17 @@ body {
   list-style: none;
   padding: 0;
 }
+.instructions li {
+  margin-bottom: 10px;
+}
 .team {
   margin-bottom: 80px;
 }
 .team h1 {
   margin-top: 0;
+}
+.section-title {
+  margin-bottom: 50px;
 }
 .member {
   text-align: center;
@@ -50,6 +62,12 @@ body {
 }
 .member a {
   text-decoration: none;
+}
+.member h1 {
+  font-size: 24px;
+}
+.member img {
+  margin-bottom: 20px;
 }
 .main-footer {
   text-align: center;

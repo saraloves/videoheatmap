@@ -34,8 +34,9 @@ App.Views.VideoPlayer = Backbone.View.extend({
   createVote: function(e) {
     var id = this.model.id;
     var timeStamp = this.model.attributes.videoPlayer.currentTime();
-    var type = $(e.target).find('.vjs-control-content').data('vote');
-    var vote = type === 'downVote' ? -1 : 1;
+    var type = $(e.target).find('.vjs-control-content').context.className;
+    var vote = type === 'vjs-upvote-button vjs-control' ? 1 : -1;
+    console.log(vote);
 
     this.model.attributes.votes.create({
       video_id: id,
