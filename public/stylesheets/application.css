@@ -45,12 +45,12 @@ a:hover {
   line-height: 21;
   line-height: 1.3125rem;
   text-decoration: none;
-  background: #28bef0;
+  background: #3498db;
   padding: 10px 35px;
   color: #fff;
 }
 .btn:hover {
-  background: #10b5ec;
+  background: #258bcf;
   color: #fff;
 }
 .header-wrapper,
@@ -96,7 +96,7 @@ a:hover {
   margin: 0;
 }
 .logo span:first-child {
-  color: #28bef0;
+  color: #3498db;
   margin-right: 3px;
 }
 .logo span:last-child {
