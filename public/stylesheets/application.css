@@ -1,3 +1,22 @@
+@charset "utf-8";
+@import "base/normalize.css";
+body {
+  width: 100%;
+  *zoom: 1;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 .hidden {
   visibility: hidden;
 }
@@ -12,10 +31,38 @@ a:hover {
   color: #ff2a00;
 }
 .main-header {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
+  *width: 97.91666666666666% -correction;
+  *margin: 0 1.0416666666666665% -correction;
   margin-bottom: 80px;
   margin-top: 40px;
 }
+.main-footer {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
+  *width: 97.91666666666666% -correction;
+  *margin: 0 1.0416666666666665% -correction;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.main-footer p {
+  margin: 0px;
+}
 .logo {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
+  *width: 97.91666666666666% -correction;
+  *margin: 0 1.0416666666666665% -correction;
   margin-bottom: 80px;
 }
 .logo img {
@@ -24,6 +71,15 @@ a:hover {
   margin: 0 auto;
 }
 .intro {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  *width: 64.58333333333334% -correction;
+  *margin: 0 1.0416666666666665% -correction;
+  margin-left: 17.708333333333336%;
+  margin-right: 17.708333333333336%;
   text-align: center;
 }
 .intro h1 {
@@ -32,7 +88,23 @@ a:hover {
   text-transform: uppercase;
 }
 .how-to-use {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
+  *width: 97.91666666666666% -correction;
+  *margin: 0 1.0416666666666665% -correction;
   margin-bottom: 80px;
+}
+.instructions {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 31.25%;
+  margin: 0 1.0416666666666665%;
+  *width: 31.25% -correction;
+  *margin: 0 1.0416666666666665% -correction;
 }
 .instructions h1 {
   margin: 0;
@@ -45,6 +117,13 @@ a:hover {
   margin-bottom: 10px;
 }
 .team {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
+  *width: 97.91666666666666% -correction;
+  *margin: 0 1.0416666666666665% -correction;
   margin-bottom: 80px;
 }
 .team h1 {
@@ -54,6 +133,13 @@ a:hover {
   margin-bottom: 50px;
 }
 .member {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 31.25%;
+  margin: 0 1.0416666666666665%;
+  *width: 31.25% -correction;
+  *margin: 0 1.0416666666666665% -correction;
   text-align: center;
 }
 .member ul {
@@ -69,12 +155,14 @@ a:hover {
 .member img {
   margin-bottom: 20px;
 }
-.main-footer {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.main-footer p {
-  margin: 0px;
+.video-wrapper {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  *width: 64.58333333333334% -correction;
+  *margin: 0 1.0416666666666665% -correction;
 }
 .heatmap-button {
   display: inline-block;
