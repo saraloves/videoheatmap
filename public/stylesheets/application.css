@@ -95,13 +95,6 @@ a:hover {
   float: left;
   margin: 0;
 }
-.logo span:first-child {
-  color: #3498db;
-  margin-right: 3px;
-}
-.logo span:last-child {
-  color: #ff7878;
-}
 .intro {
   display: inline;
   float: left;
