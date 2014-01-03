@@ -60,6 +60,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       var colorScale = d3.scale.linear()
           .domain([-1, 0, 1])
           .range(["#001CFF", "#F100FF", "#FF0020"]);
+
       d3.select("#" + videoID + ' .vjs-heatmap').selectAll("svg").remove();
       var svg = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
           .attr("width", width/2)
@@ -98,7 +99,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
         .append("svg:mask")
           .attr("id", function(d) { return "Mask" + d.key; })
         .append("svg:rect")
-          .attr("x", function(d) { return (+d.key * secondWidth)/2; })
+          .attr("x", function(d) { return (((+d.key)-1) * secondWidth)/2; })
           .attr("y",0)
           .attr("width",secondWidth*2)
           .attr("height",height)
@@ -107,7 +108,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       var heatMap = svg.selectAll(".second")
         .data(data)
         .enter().append("rect")
-          .attr("x", function(d) { return (+d.key * secondWidth)/2; })
+          .attr("x", function(d) { return (((+d.key)-1) * secondWidth)/2; })
           .attr("y", 0)
           .attr("width", secondWidth*2)
           .attr("height", height)
