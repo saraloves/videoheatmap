@@ -12,8 +12,6 @@
 
 .instructions
   column(4)
-  h1, h2
-    color: $green
   ul
     font-size(18)
     list-style: none
@@ -21,9 +19,9 @@
     margin: 0 0 35px
   li
     margin-bottom: 15px
-    background: #f3f3f3
+    background: $gray
     padding: 12px 10px
-    border-top: 1px solid #e2e2e2
-    border-bottom: 1px solid #e2e2e2
+    border-top: 1px solid darken($gray, 10%)
+    border-bottom: 1px solid darken($gray, 10%)
   strong
     color: $blue

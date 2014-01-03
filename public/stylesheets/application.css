@@ -30,11 +30,16 @@ a {
 a:hover {
   color: #ff2a00;
 }
+img {
+  max-width: 100%;
+  display: block;
+}
 .section-title {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 24px;
   line-height: 1.5rem;
+  color: #1abc9c;
   font-weight: 700;
   margin: 0 0 25px;
 }
@@ -144,10 +149,6 @@ a:hover {
   *width: 31.25% -correction;
   *margin: 0 1.0416666666666665% -correction;
 }
-.instructions h1,
-.instructions h2 {
-  color: #1abc9c;
-}
 .instructions ul {
   font-size: 18px;
   font-size: 1.125rem;
@@ -161,11 +162,15 @@ a:hover {
   margin-bottom: 15px;
   background: #f3f3f3;
   padding: 12px 10px;
-  border-top: 1px solid #e2e2e2;
-  border-bottom: 1px solid #e2e2e2;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
 }
 .instructions strong {
   color: #3498db;
+}
+.team-wrapper {
+  padding-top: 75px;
+  background: #f3f3f3;
 }
 .team {
   display: inline;
@@ -188,7 +193,17 @@ a:hover {
   margin: 0 1.0416666666666665%;
   *width: 31.25% -correction;
   *margin: 0 1.0416666666666665% -correction;
-  text-align: center;
+}
+.member:first-of-type {
+  margin-left: 0;
+}
+.member h1 {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 22.5;
+  line-height: 1.40625rem;
+  color: #3498db;
+  margin-bottom: 20px;
 }
 .member ul {
   list-style: none;
@@ -197,13 +212,10 @@ a:hover {
 .member a {
   text-decoration: none;
 }
-.member h1 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-}
-.member img {
+.member-img {
+  box-sizing: border-box;
+  border: 1px solid #dbdbdb;
+  margin: 0;
   margin-bottom: 20px;
 }
 .video-wrapper {
@@ -254,4 +266,16 @@ a:hover {
 }
 .vjs-default-skin .vjs-control-bar {
   height: 4em !important;
+}
+.icon {
+  font-family: FontAwesome;
+}
+.icon-twitter:before {
+  content: '\f099';
+}
+.icon-github:before {
+  content: '\f113';
+}
+.icon-linkedin:before {
+  content: '\f0e1';
 }
