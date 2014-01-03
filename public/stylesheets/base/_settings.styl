@@ -7,10 +7,65 @@
 //-----------------------------------------------------------------------
 
 //--------------- Variables ---------------//
-
+base-font-size = 16
+base-line-height = 24
+$blue = #3498db
+$green = #1abc9c
+$dark-gray = #34495e
+$gray = #f3f3f3
+$purple = #2c3e50
 
 //--------------- Grid ---------------//
 column-width = 60px
 gutter-width = 20px
 columns = 12
 total-width = 100%
+
+//--------------- Mixins ---------------//
+
+// Font-size Mixin using rem
+font-size($fontValue = base-font-size, $baseFontValue = base-font-size, $baseLineValue = base-line-height)
+  font-size   $fontValue px
+  font-size   ($fontValue / $baseFontValue) rem
+  line-height ($fontValue / $baseFontValue) * $baseLineValue
+  line-height ($baseLineValue/$baseFontValue) * ($fontValue / $baseFontValue) rem
+
+// Crossbrowser inline-block
+inline-block()
+  *vertical-align: auto
+  *display: inline
+  zoom: 1;
+  display: -moz-inline-stack
+  display: inline-block
+
+// Vendor mixin helper
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+// Border radius mixin
+border-radius()
+  vendor('border-radius', arguments)
+
+// Transition mixin
+transition()
+  vendor('transition', arguments)
+
+// Clearfix
+clearfix()
+  *zoom:1
+  &:before,
+  &:after
+    content:""
+    display:table
+
+  &:after
+    clear:both
+
+
+
+
+

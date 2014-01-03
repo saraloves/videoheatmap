@@ -6,25 +6,40 @@
 //
 //-----------------------------------------------------------------------
 
+.team-wrapper
+  padding-top: 75px
+  background: $gray
+
 .team
   column(12)
   margin-bottom: 80px
   h1
     margin-top: 0
 
-.section-title
-  margin-bottom: 50px
-
 .member
   column(4)
-  text-align: center
+  &:first-of-type
+    margin-left: 0
+  h1
+    font-size(15)
+    color: $blue
+  h2
+    font-size(13)
+    font-weight: 400
+    color: $dark-gray
+    margin-bottom: 20px
   ul
+    clearfix()
+    margin: 0
     list-style: none
     padding: 0
+  li
+    float: left
+    margin-right: 10px
   a
     text-decoration: none
-  h1
-    font-size: 24px
-  img
-    margin-bottom: 20px
+
+.member-img
+  margin-bottom: 20px
+  border: 1px solid darken($gray, 10%)
 

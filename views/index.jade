@@ -3,61 +3,89 @@ extends layout
 block content
   .container
     header.main-header
-      .logo
-        img(src="#" width="460" height="100")
-      .intro
-        h1 Skip to the good stuff
-        p Heatvote allows users to vote on moments within a video.  These votes are then aggregated into a heat map, where users can see where the most liked, least liked, and the most controversial moments occur before watching the video.  All features are integrated into a standalone video player.  There's no need to worry about APIs, compatibility issues, and you can host your own videos.
+      img.logo(src="images/logo.png" width="189" height="41")
+      nav.main-nav
+        ul
+          li: a.btn(href="#") Login
+
+    .intro
+      h1 Skip to the good stuff
+      p Heatvote allows users to vote on moments within a video.  These votes are then aggregated into a heat map, where users can see where the most liked, least liked, and the most controversial moments occur before watching the video.  All features are integrated into a standalone video player.  There's no need to worry about APIs, compatibility issues, and you can host your own videos.
 
     section.how-to-use
       .instructions
-        h1.section-title How to use:
+        h1.section-title How to use
         ul
           li
-            strong Step 1:
+            strong 1.
             |  Watch video
           li
-            strong Step 2:
+            strong 2.
             |  Click on the thumbs when you
             | like/dislike a moment of the video
           li
-            strong Step 3:
+            strong 3.
             |  Click on the star to view all
             | votes for this video!
-          li Heatmap Color Scale
-          img(src="#")  Red means awesome HOT stuff, blue means meh.  Purple is a combination of both.  Make this when we have the heatmap colors chosen
+        h2.section-title Heatmap color scale
+        img(src="#")  Red means awesome HOT stuff, blue means meh.  Purple is a combination of both.  Make this when we have the heatmap colors chosen
       .video-wrapper
 
-    section.team
-      h1.section-title Team
-      article.member
-        img(src="/images/sara.jpg" width="156" height="156")
-        h1 Sara Binns
-        ul
-          li: a(href="https://twitter.com/SaraDeveloper") Twitter
-          li: a(href="https://github.com/saraloves") GitHub
-          li: a(href="https://sarabinns.com") Blog
-          li: a(href="http://www.linkedin.com/profile/view?id=44019912&trk=nav_responsive_tab_profile") LinkedIn
+  .team-wrapper
+    .container
+      section.team
+        h1.section-title Team
+        article.member
+          figure.member-img
+            img(src="/images/sara.jpg")
+          h1 Sara Binns
+          h2 Software Engineer
+          ul
+            li
+              a.icon(href="https://twitter.com/SaraDeveloper")
+                i.icon-twitter
+            li
+              a.icon(href="https://github.com/saraloves")
+                i.icon-github
+            li
+              a.icon(href="http://www.linkedin.com/profile/view?id=44019912&trk=nav_responsive_tab_profile")
+                i.icon-linkedin
 
-      article.member
-        img(src="/images/joao.jpg" width="156" height="156")
-        h1 Joao Stein
-        ul
-          li: a(href="https://twitter.com/joaostein") Twitter
-          li: a(href="https://github.com/joaostein") GitHub
-          li: a(href="http://www.joaostein.com.br/") Blog
-          li: a(href="http://www.linkedin.com/in/joaostein") LinkedIn
+        article.member
+          figure.member-img
+            img(src="/images/joao.jpg")
+          h1 Joao Stein
+          h2 Software Engineer
+          ul
+            li
+              a.icon(href="https://twitter.com/joaostein")
+                i.icon-twitter
+            li
+              a.icon(href="https://github.com/joaostein")
+                i.icon-github
+            li
+              a.icon(href="http://www.linkedin.com/in/joaostein")
+                i.icon-linkedin
 
-      article.member
-        img(src="/images/lindsey.jpg" width="156" height="156")
-        h1 Lindsey Smith
-        ul
-          li: a(href="https://twitter.com/leaena") Twitter
-          li: a(href="https://github.com/leaena") GitHub
-          li: a(href="http://leaena.com") Blog
-          li: a(href="http://www.linkedin.com/in/leaena") LinkedIn
+        article.member
+          figure.member-img
+            img(src="/images/lindsey.jpg")
+          h1 Lindsey Smith
+          h2 Software Engineer
+          ul
+            li
+              a.icon(href="https://twitter.com/leaena")
+                i.icon-twitter
+            li
+              a.icon(href="https://github.com/leaena")
+                i.icon-github
+            li
+              a.icon(href="http://www.linkedin.com/in/leaena")
+                i.icon-linkedin
 
-    footer.main-footer
-      p
-        | &copy; Produced at&nbsp;
-        a(href="#") Hack Reactor
+  .main-footer-wrapper
+    .container
+      footer.main-footer
+        p
+          | &copy; Produced at&nbsp;
+          a(href="#") Hack Reactor
