@@ -84,7 +84,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       gradient.append("svg:stop")
           .attr("offset", 0)
           .attr("stop-color", "white")
-          .attr("stop-opacity", 0);
+          .attr("stop-opacity", 0.2);
       gradient.append("svg:stop")
           .attr("offset", 0.5)
           .attr("stop-color", "white")
@@ -92,7 +92,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       gradient.append("svg:stop")
           .attr("offset", 1)
           .attr("stop-color", "white")
-          .attr("stop-opacity", 0);
+          .attr("stop-opacity", 0.2);
 
       svg.selectAll(".masks")
         .data(data).enter()
