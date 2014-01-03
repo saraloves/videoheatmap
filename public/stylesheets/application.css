@@ -79,10 +79,6 @@ img {
   margin-top: 70px;
   margin-bottom: 125px;
 }
-.main-footer-wrapper {
-  background: #2c3e50;
-  color: #fff;
-}
 .main-footer {
   display: inline;
   float: left;
@@ -92,16 +88,6 @@ img {
   *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
   padding: 50px 0;
-  text-align: center;
-}
-.main-footer p {
-  margin: 0px;
-}
-.main-footer a {
-  color: #fff;
-}
-.main-footer a:hover {
-  color: #1abc9c;
 }
 .main-nav {
   float: right;
@@ -333,4 +319,20 @@ img {
 }
 .icon-linkedin:before {
   content: '\f0e1';
+}
+.main-footer-wrapper {
+  background: #2c3e50;
+  color: #fff;
+}
+.main-footer {
+  text-align: center;
+}
+.main-footer p {
+  margin: 0px;
+}
+.main-footer a {
+  color: #fff;
+}
+.main-footer a:hover {
+  color: #1abc9c;
 }
