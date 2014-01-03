@@ -169,6 +169,10 @@ img {
   margin: 0 0 35px;
 }
 .instructions li {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 19.5;
+  line-height: 1.21875rem;
   margin-bottom: 15px;
   background: #f3f3f3;
   padding: 12px 10px;
