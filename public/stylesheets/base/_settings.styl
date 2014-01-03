@@ -17,15 +17,34 @@ columns = 12
 total-width = 100%
 
 //--------------- Mixins ---------------//
+
+// Font-size Mixin using rem
 font-size($fontValue = base-font-size, $baseFontValue = base-font-size, $baseLineValue = base-line-height)
   font-size   $fontValue px
   font-size   ($fontValue / $baseFontValue) rem
   line-height ($fontValue / $baseFontValue) * $baseLineValue
   line-height ($baseLineValue/$baseFontValue) * ($fontValue / $baseFontValue) rem
 
+// Crossbrowser inline-block
 inline-block()
   *vertical-align: auto
   *display: inline
   zoom: 1;
   display: -moz-inline-stack
   display: inline-block
+
+// Border Radius
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+
+
+
+
