@@ -6,6 +6,10 @@
 //
 //-----------------------------------------------------------------------
 
+.team-wrapper
+  padding-top: 75px
+  background: $gray
+
 .team
   column(12)
   margin-bottom: 80px
@@ -14,14 +18,21 @@
 
 .member
   column(4)
-  text-align: center
+  &:first-of-type
+    margin-left: 0
+  h1
+    font-size(15)
+    color: $blue
+    margin-bottom: 20px
   ul
     list-style: none
     padding: 0
   a
     text-decoration: none
-  h1
-    font-size: 24px
-  img
-    margin-bottom: 20px
+
+.member-img
+  box-sizing: border-box
+  border: 1px solid darken($gray, 10%)
+  margin: 0
+  margin-bottom: 20px
 
