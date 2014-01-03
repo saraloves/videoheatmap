@@ -22,3 +22,10 @@ font-size($fontValue = base-font-size, $baseFontValue = base-font-size, $baseLin
   font-size   ($fontValue / $baseFontValue) rem
   line-height ($fontValue / $baseFontValue) * $baseLineValue
   line-height ($baseLineValue/$baseFontValue) * ($fontValue / $baseFontValue) rem
+
+inline-block()
+  *vertical-align: auto
+  *display: inline
+  zoom: 1;
+  display: -moz-inline-stack
+  display: inline-block
