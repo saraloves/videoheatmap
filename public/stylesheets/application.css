@@ -269,6 +269,22 @@ img {
 }
 .icon {
   font-family: FontAwesome;
+  background: #fff;
+  padding: 5px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.icon:hover {
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  background: #34495e;
+  color: #fff;
 }
 .icon-twitter:before {
   content: '\f099';
