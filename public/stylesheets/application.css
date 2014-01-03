@@ -206,8 +206,22 @@ img {
   margin-bottom: 20px;
 }
 .member ul {
+  *zoom: 1;
+  margin: 0;
   list-style: none;
   padding: 0;
+}
+.member ul:before,
+.member ul:after {
+  content: "";
+  display: table;
+}
+.member ul:after {
+  clear: both;
+}
+.member li {
+  float: left;
+  margin-right: 10px;
 }
 .member a {
   text-decoration: none;
@@ -268,14 +282,19 @@ img {
   height: 4em !important;
 }
 .icon {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  box-sizing: border-box;
+  text-align: center;
   font-family: FontAwesome;
   background: #fff;
   padding: 5px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
+  display: block;
+  width: 27px;
+  height: 27px;
 }
 .icon:hover {
   -webkit-transition: all 300ms ease;
@@ -283,7 +302,7 @@ img {
   -ms-transition: all 300ms ease;
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
-  background: #34495e;
+  background: #3498db;
   color: #fff;
 }
 .icon-twitter:before {
