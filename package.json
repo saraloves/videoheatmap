@@ -21,7 +21,7 @@
     "sequelize": "~2.0.0-beta.2",
     "express": "~3.4.7",
     "pg": "~2.8.4",
-    "less-middleware": "~0.1.14",
+    "stylus": "*",
     "jade": "*",
     "cors": "~2.1.1"
   }

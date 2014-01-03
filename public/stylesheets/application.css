@@ -93,7 +93,7 @@ a:hover {
   z-index: 10;
 }
 svg {
-  background: rgba(20, 20, 20, 0.6);
+  background: rgba(20,20,20,0.6);
   opacity: 0.75;
 }
 .vjs-control.vjs-heat-button:before {
