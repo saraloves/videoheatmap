@@ -1,3 +1,5 @@
+@charset "utf-8";
+@import "base/normalize.css";
 .hidden {
   visibility: hidden;
 }
@@ -14,6 +16,13 @@ a:hover {
 .main-header {
   margin-bottom: 80px;
   margin-top: 40px;
+}
+.main-footer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.main-footer p {
+  margin: 0px;
 }
 .logo {
   margin-bottom: 80px;
@@ -68,13 +77,6 @@ a:hover {
 }
 .member img {
   margin-bottom: 20px;
-}
-.main-footer {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.main-footer p {
-  margin: 0px;
 }
 .heatmap-button {
   display: inline-block;
