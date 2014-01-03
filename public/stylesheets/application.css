@@ -20,7 +20,7 @@ body {
   visibility: hidden;
 }
 body {
-  background: #fff url("../images/header-bg.jpg") top center no-repeat;
+  background: #fff url("../images/header-bg.jpg") center -250px no-repeat;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 a {
@@ -63,7 +63,7 @@ a:hover {
   *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
   margin-top: 70px;
-  margin-bottom: 200px;
+  margin-bottom: 125px;
 }
 .main-footer {
   display: inline;
@@ -106,13 +106,13 @@ a:hover {
   display: inline;
   float: left;
   overflow: hidden;
-  width: 64.58333333333334%;
+  width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
-  *width: 64.58333333333334% -correction;
+  *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
-  margin-left: 17.708333333333336%;
-  margin-right: 17.708333333333336%;
+  margin-bottom: 200px;
   text-align: center;
+  color: #fff;
 }
 .intro h1 {
   margin-top: 0;
