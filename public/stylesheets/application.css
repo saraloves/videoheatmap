@@ -2,26 +2,25 @@
 @import "base/normalize.css";
 body {
   width: 100%;
-  *zoom: 1;
-}
-body:before,
-body:after {
-  content: "";
-  display: table;
-}
-body:after {
-  clear: both;
 }
 .container {
   max-width: 960px;
   margin: 0 auto;
-  overflow: hidden;
+  *zoom: 1;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+.container:after {
+  clear: both;
 }
 .hidden {
   visibility: hidden;
 }
 body {
-  background-color: #eee;
+  background: #fff url("../images/header-bg.jpg") top center no-repeat;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 a {
@@ -54,6 +53,7 @@ a:hover {
   background: #10b5ec;
   color: #fff;
 }
+.header-wrapper,
 .main-header {
   display: inline;
   float: left;
