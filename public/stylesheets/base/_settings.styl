@@ -37,7 +37,7 @@ inline-block()
   display: -moz-inline-stack
   display: inline-block
 
-// Border Radius
+// Vendor mixin helper
 vendor(prop, args)
   -webkit-{prop} args
   -moz-{prop} args
@@ -45,8 +45,13 @@ vendor(prop, args)
   -o-{prop} args
   {prop} args
 
+// Border radius mixin
 border-radius()
   vendor('border-radius', arguments)
+
+// Transition mixin
+transition()
+  vendor('transition', arguments)
 
 // Clearfix
 clearfix()
