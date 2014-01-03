@@ -249,10 +249,8 @@ img {
   text-decoration: none;
 }
 .member-img {
-  box-sizing: border-box;
-  border: 1px solid #dbdbdb;
-  margin: 0;
   margin-bottom: 20px;
+  border: 1px solid #dbdbdb;
 }
 .video-wrapper {
   display: inline;
