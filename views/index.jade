@@ -1,19 +1,17 @@
 extends layout
 
 block content
-  .header-wrapper
-    .container
-      header.main-header
-        h1.logo
-          span Heat
-          span Vote
-        nav.main-nav
-          ul
-            li: a.btn(href="#") Login
-
-      .video-wrapper
-
   .container
+    header.main-header
+      h1.logo
+        span Heat
+        span Vote
+      nav.main-nav
+        ul
+          li: a.btn(href="#") Login
+
+    .video-wrapper
+
     .intro
       h1 Skip to the good stuff
       p Heatvote allows users to vote on moments within a video.  These votes are then aggregated into a heat map, where users can see where the most liked, least liked, and the most controversial moments occur before watching the video.  All features are integrated into a standalone video player.  There's no need to worry about APIs, compatibility issues, and you can host your own videos.
