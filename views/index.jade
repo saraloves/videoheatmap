@@ -3,11 +3,14 @@ extends layout
 block content
   .container
     header.main-header
-      .logo
-        img(src="#" width="460" height="100")
-      .intro
-        h1 Skip to the good stuff
-        p Heatvote allows users to vote on moments within a video.  These votes are then aggregated into a heat map, where users can see where the most liked, least liked, and the most controversial moments occur before watching the video.  All features are integrated into a standalone video player.  There's no need to worry about APIs, compatibility issues, and you can host your own videos.
+      h1.logo Heatvote
+      nav.main-nav
+        ul
+          li: a.btn(href="#") Login
+
+    .intro
+      h1 Skip to the good stuff
+      p Heatvote allows users to vote on moments within a video.  These votes are then aggregated into a heat map, where users can see where the most liked, least liked, and the most controversial moments occur before watching the video.  All features are integrated into a standalone video player.  There's no need to worry about APIs, compatibility issues, and you can host your own videos.
 
     section.how-to-use
       .instructions
