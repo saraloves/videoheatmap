@@ -30,6 +30,14 @@ a {
 a:hover {
   color: #ff2a00;
 }
+.section-title {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 25px;
+}
 .btn {
   *vertical-align: auto;
   *display: inline;
@@ -136,15 +144,28 @@ a:hover {
   *width: 31.25% -correction;
   *margin: 0 1.0416666666666665% -correction;
 }
-.instructions h1 {
-  margin: 0;
+.instructions h1,
+.instructions h2 {
+  color: #1abc9c;
 }
 .instructions ul {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 27;
+  line-height: 1.6875rem;
   list-style: none;
   padding: 0;
+  margin: 0 0 35px;
 }
 .instructions li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  background: #f3f3f3;
+  padding: 12px 10px;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+}
+.instructions strong {
+  color: #3498db;
 }
 .team {
   display: inline;
@@ -158,9 +179,6 @@ a:hover {
 }
 .team h1 {
   margin-top: 0;
-}
-.section-title {
-  margin-bottom: 50px;
 }
 .member {
   display: inline;
