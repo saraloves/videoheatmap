@@ -33,7 +33,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       timestamp: timeStamp,
       vote: vote
     });
-
+    this.createHeatmap(this.model.get('width'), this.model.attributes.videoPlayer.duration(), this.model.id);
     e.preventDefault();
   },
 
@@ -59,8 +59,9 @@ App.Views.VideoPlayer = Backbone.View.extend({
 
       var colorScale = d3.scale.linear()
           .domain([-1, 0, 1])
-          .range(["blue", "purple", "red"]);
+          .range(["#001CFF", "#F100FF", "#FF0020"]);
 
+      d3.select("#" + videoID + ' .vjs-heatmap').selectAll("svg").remove();
       var svg = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
           .attr("width", width/2)
           .attr("height", height)
@@ -83,7 +84,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       gradient.append("svg:stop")
           .attr("offset", 0)
           .attr("stop-color", "white")
-          .attr("stop-opacity", 0);
+          .attr("stop-opacity", 0.2);
       gradient.append("svg:stop")
           .attr("offset", 0.5)
           .attr("stop-color", "white")
@@ -91,14 +92,14 @@ App.Views.VideoPlayer = Backbone.View.extend({
       gradient.append("svg:stop")
           .attr("offset", 1)
           .attr("stop-color", "white")
-          .attr("stop-opacity", 0);
+          .attr("stop-opacity", 0.2);
 
       svg.selectAll(".masks")
         .data(data).enter()
         .append("svg:mask")
           .attr("id", function(d) { return "Mask" + d.key; })
         .append("svg:rect")
-          .attr("x", function(d) { return (+d.key * secondWidth)/2; })
+          .attr("x", function(d) { return (((+d.key)-1) * secondWidth)/2; })
           .attr("y",0)
           .attr("width",secondWidth*2)
           .attr("height",height)
@@ -107,7 +108,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       var heatMap = svg.selectAll(".second")
         .data(data)
         .enter().append("rect")
-          .attr("x", function(d) { return (+d.key * secondWidth)/2; })
+          .attr("x", function(d) { return (((+d.key)-1) * secondWidth)/2; })
           .attr("y", 0)
           .attr("width", secondWidth*2)
           .attr("height", height)
