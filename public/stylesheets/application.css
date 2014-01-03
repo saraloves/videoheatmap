@@ -213,6 +213,14 @@ img {
   line-height: 22.5;
   line-height: 1.40625rem;
   color: #3498db;
+}
+.member h2 {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 19.5;
+  line-height: 1.21875rem;
+  font-weight: 400;
+  color: #34495e;
   margin-bottom: 20px;
 }
 .member ul {
