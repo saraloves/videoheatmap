@@ -33,7 +33,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       timestamp: timeStamp,
       vote: vote
     });
-    this.createHeatmap();
+    this.createHeatmap(this.model.get('width'), this.model.attributes.videoPlayer.duration(), this.model.id);
     e.preventDefault();
   },
 
@@ -41,7 +41,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
     width = width*2;
     var height = 10;
     var secondWidth = width/numSeconds;
-    d3.select("#" + videoID + ' .vjs-heatmap').empty();
+
     d3.json('/votes/'+ videoID, function(json) {
       var total = d3.nest()
         .rollup(function(d){
@@ -60,7 +60,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       var colorScale = d3.scale.linear()
           .domain([-1, 0, 1])
           .range(["#001CFF", "#F100FF", "#FF0020"]);
-
+      d3.select("#" + videoID + ' .vjs-heatmap').selectAll("svg").remove();
       var svg = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
           .attr("width", width/2)
           .attr("height", height)
