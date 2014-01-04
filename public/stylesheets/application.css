@@ -67,7 +67,6 @@ img {
   background: #258bcf;
   color: #fff;
 }
-.header-wrapper,
 .main-header {
   display: inline;
   float: left;
@@ -78,6 +77,25 @@ img {
   *margin: 0 1.0416666666666665% -correction;
   margin-top: 70px;
   margin-bottom: 125px;
+}
+.how-to-use {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
+  *width: 97.91666666666666% -correction;
+  *margin: 0 1.0416666666666665% -correction;
+  margin-bottom: 80px;
+}
+.instructions {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 31.25%;
+  margin: 0 1.0416666666666665%;
+  *width: 31.25% -correction;
+  *margin: 0 1.0416666666666665% -correction;
 }
 .main-footer {
   display: inline;
@@ -125,25 +143,6 @@ img {
   line-height: 60px;
   line-height: 3.75rem;
   text-transform: uppercase;
-}
-.how-to-use {
-  display: inline;
-  float: left;
-  overflow: hidden;
-  width: 97.91666666666666%;
-  margin: 0 1.0416666666666665%;
-  *width: 97.91666666666666% -correction;
-  *margin: 0 1.0416666666666665% -correction;
-  margin-bottom: 80px;
-}
-.instructions {
-  display: inline;
-  float: left;
-  overflow: hidden;
-  width: 31.25%;
-  margin: 0 1.0416666666666665%;
-  *width: 31.25% -correction;
-  *margin: 0 1.0416666666666665% -correction;
 }
 .instructions ul {
   font-size: 18px;
