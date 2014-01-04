@@ -62,10 +62,25 @@ App.Views.VideoPlayer = Backbone.View.extend({
           .range(["#001CFF", "#F100FF", "#FF0020"]);
 
       d3.select("#" + videoID + ' .vjs-heatmap').selectAll("svg").remove();
-      var svg = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
-          .attr("width", width/2)
-          .attr("height", height)
-        .append("g");
+      var response = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
+          .attr({
+            "width": "100%",
+            "height": "10px"
+          })
+          .attr("viewBox", "0 0 " + width/2 + " " + height )
+          .attr("preserveAspectRatio", "xMidYMid meet")
+          .attr("pointer-events", "all")
+        .call(d3.behavior.zoom().on("zoom", redraw));
+
+      var svg = response
+        .append('svg:g');
+
+      var redraw = function() {
+        console.log(d3.event.scale, d3.event.translate);
+        svg.attr("transform",
+          "translate(" + d3.event.translate + ")"
+          + " scale(" + d3.event.scale + ", 10)");
+      }
 
       var feMerge = svg.append("svg:filter")
           .attr("id", "glow")
@@ -102,7 +117,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
           .attr("x", function(d) { return (((+d.key)-1) * secondWidth)/2; })
           .attr("y",0)
           .attr("width",secondWidth*2)
-          .attr("height",height)
+          .attr("height", height)
           .attr("fill", "url(#Gradient)");
 
       var heatMap = svg.selectAll(".second")
