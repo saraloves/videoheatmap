@@ -8,7 +8,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
     this.render();
     var self = this;
     this.$('video').on('loadedmetadata', function(){
-      self.createHeatmap.call(self, self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
+      self.createHeatmap(self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
     });
   },
 
@@ -41,6 +41,16 @@ App.Views.VideoPlayer = Backbone.View.extend({
     width = width*2;
     var height = 10;
     var secondWidth = width/numSeconds;
+    var self = this;
+    $('#' + videoID).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+      var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+      var event = state ? 'FullscreenOn' : 'FullscreenOff';
+      if(event === 'FullscreenOn'){
+        self.createHeatmap(screen.width, self.model.attributes.videoPlayer.duration(), self.model.id);
+      } else{
+        self.createHeatmap(self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
+      }
+    });
 
     d3.json('/votes/'+ videoID, function(json) {
       var total = d3.nest()
@@ -76,7 +86,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
         .append('svg:g');
 
       var redraw = function() {
-        console.log(d3.event.scale, d3.event.translate);
         svg.attr("transform",
           "translate(" + d3.event.translate + ")"
           + " scale(" + d3.event.scale + ", 10)");
