@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -35,7 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //passport environments
 app.use(flash());
-app.use(express.cookieParser());
 app.use(express.session({ secret: 'keyboard cat' }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -51,7 +49,6 @@ app.get('/', routes.index);
 
 app.post('/votes', database.createVote);
 
-///////////////-->
 
 //use passport to authenticate any login attempts
 app.post('/auth/register', auth.register);
@@ -60,33 +57,6 @@ app.post('/auth/logout', auth.logout);
 app.get('/auth/login/success', auth.loginSuccess);
 app.get('/auth/login/failure', auth.loginFailure);
 
-///////////////////<--
-
-
-///////////////-->
-
-//config for local login strat
-
-// var passport = require('passport')
-//   , LocalStrategy = require('passport-local').Strategy;
-
-// passport.use(new LocalStrategy(
-//   function(username, password, done) {
-//     User.findOne({ username: username }, function(err, user) {
-//       if (err) { return done(err); }
-//       if (!user) {
-//         return done(null, false, { message: 'Incorrect username.' });
-//       }
-//       if (!user.validPassword(password)) {
-//         return done(null, false, { message: 'Incorrect password.' });
-//       }
-//       return done(null, user);
-//     });
-//   }
-// ));
-
-///////////////////<--
-//think about enabling session support
 
 app.get('/votes/:vidID', database.getVotes);
 

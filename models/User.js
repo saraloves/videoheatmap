@@ -20,50 +20,45 @@ var User = sequelize.define('auth', {
 
 User.sync();
 
-/* Auth properties      ---------------------------*/
-/* (passport)           ---------------------------*/
-
-// This is your main login logic
 var authTable = {};
 authTable.localStrategy = new PassportLocalStrategy({
-        username: 'username',
-        password: 'password',
-    },
+    username: 'username',
+    password: 'password'
+  },
 
-    // @see https://github.com/jaredhanson/passport-local
-    function (username, password, done){
-        var User = require('./User').User;
-        User.find({username: username}).success(function(user){
-            if (!user){
-                return done(null, false, { message: 'User not found.'} );
-            }
-            if (user.password !== password){
-                return done(null, false, { message: 'Incorrect password.'} );
-            }
-            return done(null, {
-                id: user._id,
-                name: user.name,
-                image: user.image,
-                username: user.username,
-            });
-        });
-    }
+  function (username, password, done){
+    var User = require('./User').User;
+    User.find({username: username}).success(function(user){
+      if (!user){
+        return done(null, false, { message: 'User not found.'} );
+      }
+      if (user.password !== password){
+        return done(null, false, { message: 'Incorrect password.'} );
+      }
+      return done(null, {
+        id: user._id,
+        name: user.name,
+        image: user.image,
+        username: user.username
+      });
+    });
+  }
 );
 
 authTable.validPassword = function(password){
-    if (this.password == password){
-        return true;
-    }
+  if (this.password == password){
+    return true;
+  }
 
-    return false;
+  return false;
 }
 
 authTable.serializeUser = function(user, done){
-    done(null, user);
+  done(null, user);
 };
 
 authTable.deserializeUser = function(obj, done){
-    done(null, obj);
+  done(null, obj);
 };
 
 module.exports.authTable = authTable;
