@@ -20,9 +20,20 @@ body {
   visibility: hidden;
 }
 body {
-  background: #fff url("../images/header-bg.jpg") center -250px no-repeat;
+  background: #fff url("../images/header-bg.jpg") no-repeat;
+  background-position: center top;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   color: #34495e;
+}
+@media (min-width: 480px) {
+  body {
+    background-position: center -100px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    background-position: center -250px;
+  }
 }
 a {
   color: #57534a;
@@ -68,11 +79,19 @@ img {
   color: #fff;
 }
 .github-fork {
-  position: absolute;
-  top: 0;
-  right: 0;
-  right: 0;
-  border: 0;
+  display: none;
+}
+@media (min-width: 1025px) {
+  .github-fork {
+    display: block;
+  }
+  .github-fork img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    right: 0;
+    border: 0;
+  }
 }
 .main-header {
   display: inline;
@@ -93,7 +112,12 @@ img {
   margin: 0 1.0416666666666665%;
   *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
-  margin-bottom: 320px;
+  margin-bottom: 250px;
+}
+@media (min-width: 481px) {
+  .intro {
+    margin-bottom: 320px;
+  }
 }
 .how-to-use {
   display: inline;
@@ -109,19 +133,47 @@ img {
   display: inline;
   float: left;
   overflow: hidden;
-  width: 31.25%;
+  width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
-  *width: 31.25% -correction;
+  *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
+  margin-bottom: 80px;
+}
+@media (min-width: 768px) {
+  .instructions {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+    *width: 31.25% -correction;
+    *margin: 0 1.0416666666666665% -correction;
+    mrgin-bottom: 0;
+  }
 }
 .video-wrapper {
   display: inline;
   float: left;
   overflow: hidden;
-  width: 64.58333333333334%;
+  width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
-  *width: 64.58333333333334% -correction;
+  *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
+}
+@media (min-width: 768px) {
+  .video-wrapper {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    *width: 64.58333333333334% -correction;
+    *margin: 0 1.0416666666666665% -correction;
+  }
+}
+.video {
+  width: 100%;
+  max-width: 640px;
 }
 .team-wrapper {
   padding-top: 75px;
@@ -140,13 +192,27 @@ img {
   display: inline;
   float: left;
   overflow: hidden;
-  width: 31.25%;
+  width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
-  *width: 31.25% -correction;
+  *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
+  margin-bottom: 30px;
 }
-.member:first-of-type {
-  margin-left: 0;
+@media (min-width: 768px) {
+  .member {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+    *width: 31.25% -correction;
+    *margin: 0 1.0416666666666665% -correction;
+  }
+}
+@media (min-width: 1024px) {
+  .member:first-of-type {
+    margin-left: 0;
+  }
 }
 .main-footer {
   display: inline;
@@ -159,7 +225,15 @@ img {
   padding: 50px 0;
 }
 .main-nav {
-  float: right;
+  margin-top: 80px;
+  text-align: center;
+}
+@media (min-width: 480px) {
+  .main-nav {
+    text-align: left;
+    margin-top: 0;
+    float: right;
+  }
 }
 .main-nav ul {
   padding: 0;
@@ -171,8 +245,15 @@ img {
   font-size: 1.5rem;
   line-height: 36;
   line-height: 2.25rem;
-  float: left;
-  margin: 0;
+  width: 189px;
+  margin: 0 auto;
+  display: block;
+}
+@media (min-width: 480px) {
+  .logo {
+    margin: 0;
+    float: left;
+  }
 }
 .intro {
   text-align: center;
@@ -217,8 +298,11 @@ img {
   text-decoration: none;
   margin-left: 5px;
 }
-.video {
-  position: relative;
+.video-js {
+  padding-top: 56.25%;
+}
+.vjs-fullscreen {
+  padding-top: 0px;
 }
 .heatmap {
   position: absolute;
@@ -253,8 +337,22 @@ img {
 .team-wrapper {
   background: #f3f3f3;
 }
-.team h1 {
+.team .section-title {
   margin-top: 0;
+  margin-left: 10px;
+}
+@media (min-width: 480px) {
+  .team .section-title {
+    margin-left: 85px;
+  }
+}
+@media (min-width: 768px) {
+  .team .section-title {
+    margin-left: 0;
+  }
+}
+.member {
+  text-align: center;
 }
 .member h1 {
   font-size: 15px;
@@ -274,6 +372,7 @@ img {
 }
 .member ul {
   *zoom: 1;
+  text-align: center;
   margin: 0;
   list-style: none;
   padding: 0;
@@ -287,13 +386,22 @@ img {
   clear: both;
 }
 .member li {
-  float: left;
+  *vertical-align: auto;
+  *display: inline;
+  zoom: 1;
+  display: -moz-inline-stack;
+  display: inline-block;
   margin-right: 10px;
 }
 .member a {
   text-decoration: none;
 }
 .member-img {
+  *vertical-align: auto;
+  *display: inline;
+  zoom: 1;
+  display: -moz-inline-stack;
+  display: inline-block;
   margin-bottom: 20px;
   border: 1px solid #dbdbdb;
 }

@@ -14,6 +14,10 @@
   margin-bottom: 80px
 
 .member
-  column(4)
-  &:first-of-type
-    margin-left: 0
+  column(12)
+  margin-bottom: 30px
+  @media (min-width: 768px)
+    column(4)
+  @media (min-width: 1024px)
+    &:first-of-type
+      margin-left: 0
