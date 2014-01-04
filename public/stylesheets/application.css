@@ -155,10 +155,25 @@ img {
   display: inline;
   float: left;
   overflow: hidden;
-  width: 64.58333333333334%;
+  width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
-  *width: 64.58333333333334% -correction;
+  *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
+}
+@media (min-width: 768px) {
+  .video-wrapper {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    *width: 64.58333333333334% -correction;
+    *margin: 0 1.0416666666666665% -correction;
+  }
+}
+.video {
+  width: 100%;
+  max-width: 640px;
 }
 .team-wrapper {
   padding-top: 75px;
@@ -269,8 +284,11 @@ img {
   text-decoration: none;
   margin-left: 5px;
 }
-.video {
-  position: relative;
+.video-js {
+  padding-top: 56.25%;
+}
+.vjs-fullscreen {
+  padding-top: 0px;
 }
 .heatmap {
   position: absolute;
