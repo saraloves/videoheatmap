@@ -24,6 +24,8 @@
     "stylus": "*",
     "jade": "*",
     "cors": "~2.1.1",
-    "passport": "~1.3.14"
+    "passport": "~0.1.18",
+    "connect-flash": "~0.1.1",
+    "passport-local": "~0.1.6"
   }
 }
