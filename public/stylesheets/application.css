@@ -68,11 +68,19 @@ img {
   color: #fff;
 }
 .github-fork {
-  position: absolute;
-  top: 0;
-  right: 0;
-  right: 0;
-  border: 0;
+  display: none;
+}
+@media (min-width: 1025px) {
+  .github-fork {
+    display: block;
+  }
+  .github-fork img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    right: 0;
+    border: 0;
+  }
 }
 .main-header {
   display: inline;
@@ -159,7 +167,15 @@ img {
   padding: 50px 0;
 }
 .main-nav {
-  float: right;
+  margin-top: 80px;
+  text-align: center;
+}
+@media (min-width: 480px) {
+  .main-nav {
+    text-align: left;
+    margin-top: 0;
+    float: right;
+  }
 }
 .main-nav ul {
   padding: 0;
@@ -171,8 +187,15 @@ img {
   font-size: 1.5rem;
   line-height: 36;
   line-height: 2.25rem;
-  float: left;
-  margin: 0;
+  width: 189px;
+  margin: 0 auto;
+  display: block;
+}
+@media (min-width: 480px) {
+  .logo {
+    margin: 0;
+    float: left;
+  }
 }
 .intro {
   text-align: center;
