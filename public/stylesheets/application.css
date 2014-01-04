@@ -112,7 +112,12 @@ img {
   margin: 0 1.0416666666666665%;
   *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
-  margin-bottom: 320px;
+  margin-bottom: 250px;
+}
+@media (min-width: 481px) {
+  .intro {
+    margin-bottom: 320px;
+  }
 }
 .how-to-use {
   display: inline;
@@ -128,10 +133,23 @@ img {
   display: inline;
   float: left;
   overflow: hidden;
-  width: 31.25%;
+  width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
-  *width: 31.25% -correction;
+  *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
+  margin-bottom: 80px;
+}
+@media (min-width: 768px) {
+  .instructions {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+    *width: 31.25% -correction;
+    *margin: 0 1.0416666666666665% -correction;
+    mrgin-bottom: 0;
+  }
 }
 .video-wrapper {
   display: inline;
