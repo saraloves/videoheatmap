@@ -10,10 +10,16 @@
   background: $gray
 
 .team
-  h1
+  .section-title
     margin-top: 0
+    margin-left: 10px
+    @media (min-width: 480px)
+      margin-left: 85px
+    @media (min-width: 768px)
+      margin-left: 0
 
 .member
+  text-align: center
   h1
     font-size(15)
     color: $blue
@@ -24,16 +30,18 @@
     margin-bottom: 20px
   ul
     clearfix()
+    text-align: center
     margin: 0
     list-style: none
     padding: 0
   li
-    float: left
+    inline-block()
     margin-right: 10px
   a
     text-decoration: none
 
 .member-img
+  inline-block()
   margin-bottom: 20px
   border: 1px solid darken($gray, 10%)
 

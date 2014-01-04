@@ -192,13 +192,27 @@ img {
   display: inline;
   float: left;
   overflow: hidden;
-  width: 31.25%;
+  width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
-  *width: 31.25% -correction;
+  *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
+  margin-bottom: 30px;
 }
-.member:first-of-type {
-  margin-left: 0;
+@media (min-width: 768px) {
+  .member {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+    *width: 31.25% -correction;
+    *margin: 0 1.0416666666666665% -correction;
+  }
+}
+@media (min-width: 1024px) {
+  .member:first-of-type {
+    margin-left: 0;
+  }
 }
 .main-footer {
   display: inline;
@@ -323,8 +337,22 @@ img {
 .team-wrapper {
   background: #f3f3f3;
 }
-.team h1 {
+.team .section-title {
   margin-top: 0;
+  margin-left: 10px;
+}
+@media (min-width: 480px) {
+  .team .section-title {
+    margin-left: 85px;
+  }
+}
+@media (min-width: 768px) {
+  .team .section-title {
+    margin-left: 0;
+  }
+}
+.member {
+  text-align: center;
 }
 .member h1 {
   font-size: 15px;
@@ -344,6 +372,7 @@ img {
 }
 .member ul {
   *zoom: 1;
+  text-align: center;
   margin: 0;
   list-style: none;
   padding: 0;
@@ -357,13 +386,22 @@ img {
   clear: both;
 }
 .member li {
-  float: left;
+  *vertical-align: auto;
+  *display: inline;
+  zoom: 1;
+  display: -moz-inline-stack;
+  display: inline-block;
   margin-right: 10px;
 }
 .member a {
   text-decoration: none;
 }
 .member-img {
+  *vertical-align: auto;
+  *display: inline;
+  zoom: 1;
+  display: -moz-inline-stack;
+  display: inline-block;
   margin-bottom: 20px;
   border: 1px solid #dbdbdb;
 }
