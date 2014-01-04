@@ -20,9 +20,20 @@ body {
   visibility: hidden;
 }
 body {
-  background: #fff url("../images/header-bg.jpg") center -250px no-repeat;
+  background: #fff url("../images/header-bg.jpg") no-repeat;
+  background-position: center top;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   color: #34495e;
+}
+@media (min-width: 480px) {
+  body {
+    background-position: center -100px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    background-position: center -250px;
+  }
 }
 a {
   color: #57534a;
