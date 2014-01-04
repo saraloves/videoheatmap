@@ -41,16 +41,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
     width = width*2;
     var height = 10;
     var secondWidth = width/numSeconds;
-    var self = this;
-    $('#' + videoID).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
-      var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
-      var event = state ? 'FullscreenOn' : 'FullscreenOff';
-      if(event === 'FullscreenOn'){
-        self.createHeatmap(screen.width, self.model.attributes.videoPlayer.duration(), self.model.id);
-      } else{
-        self.createHeatmap(self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
-      }
-    });
 
     d3.json('/votes/'+ videoID, function(json) {
       var total = d3.nest()
@@ -85,6 +75,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
       var svg = response
         .append('svg:g');
 
+      //screen resize redraw
       var redraw = function() {
         svg.attr("transform",
           "translate(" + d3.event.translate + ")"
@@ -145,6 +136,18 @@ App.Views.VideoPlayer = Backbone.View.extend({
         return d.values[1]*10;
       })
       heatMap.attr("filter", "url(#glow)");
+    });
+
+    //fullscreen redraw trigger
+    var self = this;
+    $('#' + videoID).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+      var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+      var event = state ? 'FullscreenOn' : 'FullscreenOff';
+      if(event === 'FullscreenOn'){
+        self.createHeatmap(screen.width, self.model.attributes.videoPlayer.duration(), self.model.id);
+      } else {
+        self.createHeatmap(self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
+      }
     });
   },
 
