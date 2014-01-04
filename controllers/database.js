@@ -1,5 +1,4 @@
 var Sequelize = require('sequelize');
-//PassportLocalStrategy = require('passport-local').Strategy;
 var pg = require('pg').native;
 var config = require('../db_config');
 
@@ -12,7 +11,8 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
   native: config.native
 });
 
-var voteTable = sequelize.define('votes', {
+var voteTable = sequelize.define('vote', {
+  user_id: Sequelize.STRING,
   video_id: Sequelize.STRING,
   timestamp: Sequelize.INTEGER,
   vote: Sequelize.INTEGER
@@ -27,13 +27,15 @@ var sendResponse = function(res, query){
 };
 
 var newVote = function(json, res){
-  voteTable.create(json).success(function() {
+  voteTable.findOrCreate(json).success(function() {
     sendResponse(res, {});
   });
 };
 
 module.exports.createVote = function(req, res){
+  console.log(req.user);
   var voteCreate = {
+    user_id: req.user.username,
     video_id: req.body.video_id,
     timestamp: Math.floor(req.body.timestamp),
     vote: req.body.vote

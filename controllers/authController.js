@@ -37,16 +37,16 @@ var AuthController = {
   // on Login Success callback
   loginSuccess: function(req, res){
     res.json({
-        success: true,
-        user: req.session.passport.user
+      success: true,
+      user: req.session.passport.user
     });
   },
 
   // on Login Failure callback
   loginFailure: function(req, res){
     res.json({
-        success:false, 
-        message: 'Invalid username or password.'
+      success:false, 
+      message: 'Invalid username or password.'
     });
   },
 

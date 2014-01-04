@@ -10,25 +10,22 @@ block content
         ul
           li: a.btn(href="#") Login
 
-    div(class="container_16")
-    header(class="main-header grid_16")
+      //- adding form to test passport login and registration
+      //- form(action='/auth/login' method="post")
+      //-   div
+      //-     label Username
+      //-     input(type='text' name='username')
+      //-     label Password
+      //-     input(type='text' name='password')
+      //-     input(type='submit' value='Login')
 
-      //- adding form to test passport
-      form(action='/auth/login' method="post")
-        div
-          label Username
-          input(type='text' name='username')
-          label Password
-          input(type='text' name='password')
-          input(type='submit' value='Login')
-
-      form(action='/auth/register' method='post')
-        div
-          label New Username
-          input(type='text' name='username')
-          label New Password
-          input(type='text' name='password')
-          input(type='submit' value='Login')
+      //- form(action='/auth/register' method='post')
+      //-   div
+      //-     label New Username
+      //-     input(type='text' name='username')
+      //-     label New Password
+      //-     input(type='text' name='password')
+      //-     input(type='submit' value='Login')
 
     .intro
       h1 Skip to the good stuff
