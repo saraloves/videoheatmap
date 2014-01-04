@@ -1,7 +1,6 @@
-var Sequelize = require('sequelize'),
-  // ObjectId = mongoose.Schema.Types.ObjectId,
-  PassportLocalStrategy = require('passport-local').Strategy;
+var Sequelize = require('sequelize');
 var pg = require('pg').native;
+var PassportLocalStrategy = require('passport-local').Strategy;
 var config = require('../db_config');
 
 var sequelize = new Sequelize(config.database, config.username, config.password, {
@@ -13,12 +12,31 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
   native: config.native
 });
 
-var User = sequelize.define('auth', {
+var User = sequelize.define('user', {
   username: Sequelize.STRING,
   password: Sequelize.STRING,
 });
 
 User.sync();
+
+var register = function(req, res){
+  User.sync();
+  User.find({where :{username: req.body.username}}, {raw: true}).success(function(user){
+    if (!user){
+      User.create({username: req.body.username, password: req.body.password}).success(function(user){
+        req.login(user, function(err){
+          if (err) { return next(err) };
+          return res.redirect("/");
+        });
+      });
+    } else {
+      res.json({
+        success:false,
+        message: 'Username already exists'
+      });
+    }
+  });
+};
 
 var authTable = {};
 authTable.localStrategy = new PassportLocalStrategy({
@@ -35,22 +53,13 @@ authTable.localStrategy = new PassportLocalStrategy({
       if (user.password !== password){
         return done(null, false, { message: 'Incorrect password.'} );
       }
-      return done(null, {
-        id: user._id,
-        name: user.name,
-        image: user.image,
-        username: user.username
-      });
+      return done(null, { username: user.username });
     });
   }
 );
 
 authTable.validPassword = function(password){
-  if (this.password == password){
-    return true;
-  }
-
-  return false;
+  return this.password == password;
 }
 
 authTable.serializeUser = function(user, done){
@@ -63,3 +72,4 @@ authTable.deserializeUser = function(obj, done){
 
 module.exports.authTable = authTable;
 module.exports.User = User;
+module.exports.register = register;
