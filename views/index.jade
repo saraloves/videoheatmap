@@ -10,6 +10,23 @@ block content
         ul
           li: a.btn(href="#") Login
 
+      //- adding form to test passport login and registration
+      //- form(action='/auth/login' method="post")
+      //-   div
+      //-     label Username
+      //-     input(type='text' name='username')
+      //-     label Password
+      //-     input(type='text' name='password')
+      //-     input(type='submit' value='Login')
+
+      //- form(action='/auth/register' method='post')
+      //-   div
+      //-     label New Username
+      //-     input(type='text' name='username')
+      //-     label New Password
+      //-     input(type='text' name='password')
+      //-     input(type='submit' value='Login')
+
     .intro
       h1 Skip to the good stuff
       p Heatvote allows users to vote on moments within a video.  These votes are then aggregated into a heat map, where users can see where the most liked, least liked, and the most controversial moments occur before watching the video.  All features are integrated into a standalone video player.  There's no need to worry about APIs, compatibility issues, and you can host your own videos.
@@ -17,7 +34,7 @@ block content
     section.how-to-use
       .instructions
         h1.section-title How to use
-        ul
+          ul
           li
             strong 1.
             |  Watch video
