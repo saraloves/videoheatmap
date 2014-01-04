@@ -78,6 +78,16 @@ img {
   margin-top: 70px;
   margin-bottom: 125px;
 }
+.intro {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
+  *width: 97.91666666666666% -correction;
+  *margin: 0 1.0416666666666665% -correction;
+  margin-bottom: 320px;
+}
 .how-to-use {
   display: inline;
   float: left;
@@ -124,14 +134,6 @@ img {
   margin: 0;
 }
 .intro {
-  display: inline;
-  float: left;
-  overflow: hidden;
-  width: 97.91666666666666%;
-  margin: 0 1.0416666666666665%;
-  *width: 97.91666666666666% -correction;
-  *margin: 0 1.0416666666666665% -correction;
-  margin-bottom: 320px;
   text-align: center;
   color: #fff;
 }
