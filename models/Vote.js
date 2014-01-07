@@ -47,7 +47,7 @@ var createVote = function(req, res){
 };
 
 var getVotes = function(req, res){
-  var query = {where: {'video_id': req.params.vidID}, attributes: ['timestamp', 'vote']};
+  var query = {where: {'video_id': req.params.vidID}};
   sendResponse(res, query);
 };
 
