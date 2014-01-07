@@ -51,6 +51,7 @@ if ('development' == app.get('env')) {
 
 //index serving
 app.get('/', routes.index);
+app.get('/admin', routes.admin);
 
 //Voting routes
 app.post('/votes', Vote.createVote);
