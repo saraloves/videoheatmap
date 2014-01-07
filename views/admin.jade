@@ -1,3 +1,16 @@
 extends layout
 
 block content
+  .admin-container
+    p 
+      strong Hello #{user.username}, welcome to your Admin Page!
+
+    section.analytics
+      h1.section-title Your Analytics
+      ul
+        li.graph-container
+          strong View Stats
+          div.graph1
+        li.graph-container
+          strong Voting Stats
+          div.graph2

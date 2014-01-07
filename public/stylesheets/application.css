@@ -225,6 +225,21 @@ img {
   *margin: 0 1.0416666666666665% -correction;
   padding: 50px 0;
 }
+.admin-container {
+  background-color: #fff;
+}
+.analytics li {
+  text-decoration: none;
+  display: inline-block;
+}
+.graph-container {
+  border: 1px solid #b8b8b8;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
 .main-nav {
   margin-top: 80px;
   text-align: center;
