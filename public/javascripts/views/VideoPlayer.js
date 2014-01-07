@@ -78,7 +78,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
 
       var colorScale = d3.scale.linear()
           .domain([-1, 0, 1])
-          .range(["#001CFF", "#F100FF", "#FF0020"]);
+          .range(["#003EFF", "#F100FF", "#FF0020"]);
 
       d3.select("#" + videoID + ' .vjs-heatmap').selectAll("svg").remove();
       var response = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")

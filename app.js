@@ -49,10 +49,19 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-//index serving
-app.get('/', routes.index);
+app.all('/*', function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
+  } else {
+    next();
+  }
+});
 
-//Voting routes
+//route serving
+app.get('/', routes.index);
+app.get('/admin', routes.admin);
+
+//database serving
 app.post('/votes', Vote.createVote);
 app.get('/votes/:vidID', Vote.getVotes);
 
