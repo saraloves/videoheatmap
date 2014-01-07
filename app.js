@@ -43,6 +43,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(app.router);
+app.use(function (req, res, next) {
+  res.locals.login = req.isAuthenticated();
+  next();
+});
 
 // development only
 if ('development' == app.get('env')) {
@@ -68,7 +72,7 @@ app.get('/votes/:vidID', Vote.getVotes);
 //use passport to authenticate any login attempts
 app.post('/auth/register', auth.register);
 app.post('/auth/login', auth.login);
-app.post('/auth/logout', auth.logout);
+app.get('/auth/logout', auth.logout);
 app.get('/auth/login/success', auth.loginSuccess);
 app.get('/auth/login/failure', auth.loginFailure);
 
