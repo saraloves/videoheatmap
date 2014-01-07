@@ -18,6 +18,21 @@ html
       header.main-header
         img.logo(src="images/logo.png" width="189" height="41")
         nav.main-nav
+          form(class='login hidden' action='/auth/login' method='post')
+            div
+              label Username
+              input.input(type='text' name='username')
+              label Password
+              input.input(type='password' name='password')
+              input.btn(type='submit' value='Login') Login
+
+          form(class='register hidden' action='/auth/register' method='post')
+            div
+              label New Username
+              input.input(type='text' name='username')
+              label New Password
+              input.input(type='password' name='password')
+              input.btn(type='submit' value='Register') Register
           if user
             ul
               li Hello #{user.username}
@@ -28,21 +43,7 @@ html
               li: a.btn(class="register-button" href="#") Register
 
         //- adding form to test passport login and registration
-        form(class='login hidden' action='/auth/login' method='post')
-          div
-            label Username
-            input(type='text' name='username')
-            label Password
-            input(type='password' name='password')
-            input(type='submit' value='Login')
 
-        form(class='register hidden' action='/auth/register' method='post')
-          div
-            label New Username
-            input(type='text' name='username')
-            label New Password
-            input(type='password' name='password')
-            input(type='submit' value='Register')
 
     block content
 
