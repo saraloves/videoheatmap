@@ -32,7 +32,7 @@ var AuthController = {
   // Log out a user
   logout: function(req, res){
     req.logout();
-    res.end();
+    res.redirect('/');
   }
 };
 

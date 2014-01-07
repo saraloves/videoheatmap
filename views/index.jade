@@ -1,32 +1,7 @@
 extends layout
 
 block content
-  a.github-fork(href="https://github.com/saraloves/videoheatmap")
-    img(src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub")
   .container
-    header.main-header
-      img.logo(src="images/logo.png" width="189" height="41")
-      nav.main-nav
-        ul
-          li: a.btn(href="#") Login
-
-      //- adding form to test passport login and registration
-      //- form(action='/auth/login' method="post")
-      //-   div
-      //-     label Username
-      //-     input(type='text' name='username')
-      //-     label Password
-      //-     input(type='text' name='password')
-      //-     input(type='submit' value='Login')
-
-      //- form(action='/auth/register' method='post')
-      //-   div
-      //-     label New Username
-      //-     input(type='text' name='username')
-      //-     label New Password
-      //-     input(type='text' name='password')
-      //-     input(type='submit' value='Login')
-
     .intro
       h1 Skip to the good stuff
       p Heatvote allows users to vote on moments within a video.  These votes are then aggregated into a heat map, where users can see where the most liked, least liked, and the most controversial moments occur before watching the video.  All features are integrated into a standalone video player.  There's no need to worry about APIs, compatibility issues, and you can host your own videos.
@@ -37,13 +12,16 @@ block content
         ul
           li
             strong 1.
-            |  Watch video
+            |  Log in or register
           li
             strong 2.
+            |  Watch video
+          li
+            strong 3.
             |  Click on the thumbs when you
             | like/dislike a moment of the video
           li
-            strong 3.
+            strong 4.
             |  Click on the star to view all
             | votes for this video!
 
@@ -102,10 +80,3 @@ block content
             li
               a.icon(href="http://www.linkedin.com/in/leaena")
                 i.icon-linkedin
-
-  .main-footer-wrapper
-    .container
-      footer.main-footer
-        p
-          | &copy; Produced at&nbsp;
-          a(href="#") Hack Reactor
