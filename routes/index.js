@@ -1,5 +1,5 @@
 exports.index = function(req, res){
-  res.render('index', { title: 'Heat Vote' });
+  res.render('index', { title: 'Heat Vote', user: req.user});
 };
 
 exports.admin = function(req, res){
