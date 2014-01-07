@@ -247,7 +247,17 @@ img {
 form {
   display: inline;
   color: #fff;
-  margin-left: 20px;
+  float: right;
+  margin: 0px;
+  padding: 0px;
+}
+form input {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 0px;
+}
+form .input {
+  width: 100px;
 }
 .main-nav li {
   color: #fff;
