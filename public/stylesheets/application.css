@@ -240,6 +240,21 @@ img {
   margin: 0;
   list-style: none;
 }
+.main-nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+form {
+  display: inline;
+  color: #fff;
+  margin-left: 20px;
+}
+.main-nav li {
+  color: #fff;
+}
+.hidden {
+  display: none;
+}
 .logo {
   font-size: 24px;
   font-size: 1.5rem;
