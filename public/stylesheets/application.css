@@ -169,6 +169,7 @@ img {
     margin: 0 1.0416666666666665%;
     *width: 64.58333333333334% -correction;
     *margin: 0 1.0416666666666665% -correction;
+    padding-top: 49px;
   }
 }
 .video {
@@ -300,14 +301,14 @@ form .input {
   line-height: 1.6875rem;
   list-style: none;
   padding: 0;
-  margin: 0 0 35px;
+  margin: 0 0 10px;
 }
 .instructions li {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 19.5;
   line-height: 1.21875rem;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   background: #f3f3f3;
   padding: 12px 10px;
   border-top: 1px solid #dbdbdb;
@@ -315,6 +316,9 @@ form .input {
 }
 .instructions strong {
   color: #3498db;
+}
+.instructions img {
+  margin: auto;
 }
 .heatmap-button {
   display: inline-block;
