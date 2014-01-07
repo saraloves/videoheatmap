@@ -12,6 +12,7 @@ var flash = require('connect-flash');
 var routes = require('./routes');
 var auth = require('./controllers/authController');
 var Vote = require('./models/Vote');
+var Video = require('./models/Video');
 var User = require('./models/User').authTable;
 
 //passport setup
@@ -68,6 +69,8 @@ app.get('/admin', routes.admin);
 //database serving
 app.post('/votes', Vote.createVote);
 app.get('/votes/:vidID', Vote.getVotes);
+app.post('/video', Video.createVideo);
+app.get('/video/:vidID', Video.getVideo);
 
 //use passport to authenticate any login attempts
 app.post('/auth/register', auth.register);
