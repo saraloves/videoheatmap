@@ -46,7 +46,8 @@ authTable.localStrategy = new PassportLocalStrategy({
 
   function (username, password, done){
     var User = require('./User').User;
-    User.find({username: username}).success(function(user){
+
+    User.find({where: {username: username}}).success(function(user){
       if (!user){
         return done(null, false, { message: 'User not found.'} );
       }

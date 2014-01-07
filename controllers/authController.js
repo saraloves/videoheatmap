@@ -1,6 +1,6 @@
 var passport = require('passport');
 var PassportLocalStrategy = require('passport-local').Strategy;
-var User = require('../models/User');
+var user = require('../models/User');
 
 var callbacks = function(res, success, message){
   res.json({
@@ -13,20 +13,20 @@ var AuthController = {
     // Login a user
   login: passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/auth/login/failure'
+    failureRedirect: '/'
   }),
   register: function(req, res){
-    User.register(req, res)
+    user.register(req, res);
   },
 
   // on Login Success callback
   loginSuccess: function(req, res){
-    callbacks(res, true, req.session.passport.user)
+    callbacks(res, true, req.session.passport.user);
   },
 
   // on Login Failure callback
   loginFailure: function(req, res){
-    callbacks(res, false, 'Invalid username or password.')
+    callbacks(res, false, 'Invalid username or password.');
   },
 
   // Log out a user
