@@ -243,9 +243,14 @@ img {
 .submit label {
   color: #57534a;
 }
-.submit input[type=submit] {
+.submit .submit-vid {
   margin: 20px;
-  border: 0;
+}
+.submit .btn {
+  border: none;
+}
+.submit form {
+  float: none;
 }
 .analytics li {
   text-decoration: none;
@@ -286,16 +291,16 @@ form {
   margin: 0px;
   padding: 0px;
 }
-form input {
+.main-nav li {
+  color: #fff;
+}
+.main-nav input {
   margin-left: 10px;
   margin-right: 10px;
   border: 0px;
 }
-form .input {
+.main-nav .input {
   width: 100px;
-}
-.main-nav li {
-  color: #fff;
 }
 .hidden {
   display: none;
