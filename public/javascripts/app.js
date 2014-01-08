@@ -7,14 +7,12 @@ var appView = new App.Views.App({
 });
 
 $(function(){
-  // if($('span')[0].attr('class')){
-  //   console.log('hi');
-  // }
   $('.login-button').on('click', function(){
     $('.login-button').addClass('hidden');
     $('.register-button').addClass('hidden');
     $('.login').removeClass('hidden');
   });
+
   $('.register-button').on('click', function(){
     $('.login-button').addClass('hidden');
     $('.register-button').addClass('hidden');
