@@ -71,6 +71,8 @@ app.post('/votes', Vote.createVote);
 app.get('/votes/:vidID', Vote.getVotes);
 app.post('/video', Video.createVideo);
 app.get('/video/:vidID', Video.getVideo);
+app.get('/video', Video.getVideo);
+
 
 //use passport to authenticate any login attempts
 app.post('/auth/register', auth.register);

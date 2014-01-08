@@ -138,6 +138,10 @@ img {
   *width: 97.91666666666666% -correction;
   *margin: 0 1.0416666666666665% -correction;
   margin-bottom: 80px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 19.5px;
+  line-height: 1.21875rem;
 }
 @media (min-width: 768px) {
   .instructions {
@@ -148,7 +152,7 @@ img {
     margin: 0 1.0416666666666665%;
     *width: 31.25% -correction;
     *margin: 0 1.0416666666666665% -correction;
-    mrgin-bottom: 0;
+    margin-bottom: 0;
   }
 }
 .video-wrapper {
@@ -347,7 +351,7 @@ form {
   font-size: 0.8125rem;
   line-height: 19.5;
   line-height: 1.21875rem;
-  margin-bottom: 18px;
+  margin-bottom: 13px;
   background: #f3f3f3;
   padding: 12px 10px;
   border-top: 1px solid #dbdbdb;
@@ -358,6 +362,9 @@ form {
 }
 .instructions img {
   margin: auto;
+}
+.instructions div {
+  text-align: right;
 }
 .heatmap-button {
   display: inline-block;

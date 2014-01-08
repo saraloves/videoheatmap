@@ -48,7 +48,11 @@ var createVideo = function(req, res){
 };
 
 var getVideo = function(req, res){
-  var query = {where: {'video_id': req.params.vidID}};
+  if (req.param.vidID) {
+    var query = {where: {'video_id': req.params.vidID}};
+  } else {
+    var query = {where: {'user_id': req.user.username}};
+  }
   sendResponse(res, query);
 };
 
