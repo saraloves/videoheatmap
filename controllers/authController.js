@@ -33,6 +33,13 @@ var AuthController = {
   logout: function(req, res){
     req.logout();
     res.redirect('/');
+  },
+  restrict: function(req, res, next){
+    if (!req.user) {
+      res.redirect('/');
+    } else {
+      next();
+    }
   }
 };
 
