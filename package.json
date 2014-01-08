@@ -26,6 +26,7 @@
     "cors": "~2.1.1",
     "passport": "~0.1.18",
     "connect-flash": "~0.1.1",
-    "passport-local": "~0.1.6"
+    "passport-local": "~0.1.6",
+    "bcrypt": "~0.7.7"
   }
 }
