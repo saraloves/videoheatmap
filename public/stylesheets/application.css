@@ -225,8 +225,27 @@ img {
   *margin: 0 1.0416666666666665% -correction;
   padding: 50px 0;
 }
-.admin-container {
+.admin {
   background-color: #fff;
+}
+.admin-greeting div {
+  margin: 0 auto;
+  text-align: right;
+}
+.admin-greeting hr {
+  position: relative;
+  display: block;
+  width: 980px;
+  height: 1px;
+  border: 0px;
+  background: #ccc;
+}
+.submit label {
+  color: #57534a;
+}
+.submit input[type=submit] {
+  margin: 20px;
+  border: 0;
 }
 .analytics li {
   text-decoration: none;
