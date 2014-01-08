@@ -1,6 +1,7 @@
 var Sequelize = require('sequelize');
 var pg = require('pg').native;
 var config = require('../db_config');
+var bcrypt = require('bcrypt');
 
 var sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,
@@ -33,10 +34,12 @@ var newVideo = function(json, res){
 };
 
 var createVideo = function(req, res){
+  var video_id = bcrypt.hashSync(req.body.url);
+
   if(req.user){
     var videoCreate = {
       user_id: req.user.username,
-      video_id: req.body.video_id,
+      video_id: video_id,
       url: req.body.url,
       duration: req.body.duration
     };
