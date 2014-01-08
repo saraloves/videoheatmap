@@ -64,7 +64,7 @@ app.all('/*', function(req, res, next) {
 
 //route serving
 app.get('/', routes.index);
-app.get('/admin', routes.admin);
+app.get('/admin', auth.restrict, routes.admin);
 
 //database serving
 app.post('/votes', Vote.createVote);
