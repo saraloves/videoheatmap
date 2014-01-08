@@ -2,6 +2,7 @@ var Sequelize = require('sequelize');
 var pg = require('pg').native;
 var PassportLocalStrategy = require('passport-local').Strategy;
 var config = require('../db_config');
+var bcrypt = require('bcrypt');
 
 var sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,
@@ -21,9 +22,11 @@ User.sync();
 
 var register = function(req, res){
   User.sync();
-  User.find({where :{username: req.body.username}}, {raw: true}).success(function(user){
+
+  User.find({where: {username: req.body.username}}).success(function(user){
     if (!user){
-      User.create({username: req.body.username, password: req.body.password}).success(function(user){
+      var password = bcrypt.hashSync(req.body.password, 10);
+      User.create({username: req.body.username, password: password}).success(function(user){
         req.login(user, function(err){
           if (err) { return next(err) };
           return res.redirect("/");
@@ -51,8 +54,8 @@ authTable.localStrategy = new PassportLocalStrategy({
       if (!user){
         return done(null, false, { message: 'User not found.'} );
       }
-      if (user.password !== password){
-        return done(null, false, { message: 'Incorrect password.'} );
+      if (!bcrypt.compareSync(password, user.password)){
+        return done(null, false, { message:'Incorrect password.'} );
       }
       return done(null, { username: user.username });
     });

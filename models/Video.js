@@ -29,7 +29,7 @@ var sendResponse = function(res, query){
 
 var newVideo = function(json, res){
   Video.findOrCreate(json).success(function() {
-    sendResponse(res, {where: {video_id: json.video_id}});
+    res.redirect('/admin');
   });
 };
 
@@ -44,8 +44,6 @@ var createVideo = function(req, res){
       duration: req.body.duration
     };
     newVideo(videoCreate, res);
-  } else {
-    console.log("Not logged in");
   }
 };
 
