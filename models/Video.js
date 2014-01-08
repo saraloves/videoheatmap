@@ -34,7 +34,7 @@ var newVideo = function(json, res){
 };
 
 var createVideo = function(req, res){
-  var video_id = bcrypt.hashSync(req.body.url);
+  var video_id = bcrypt.hashSync(req.body.url, 10);
 
   if(req.user){
     var videoCreate = {
