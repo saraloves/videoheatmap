@@ -13,8 +13,6 @@ var createLineDaysVotesChart = function (voteData) {
 
     chart.xAxis
       .axisLabel('Days')
-      .tickFormat(d3.format('0d'));
-
     chart.yAxis
       .axisLabel('Quantity of votes')
 
