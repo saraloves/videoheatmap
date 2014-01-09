@@ -3,6 +3,7 @@ var monthVotes = {};
 var videoLengthVotes = {};
 
 d3.json('/votes/aaaa', function (error, data) {
+  data = data || [];
   for (var i = 0; i < data.length; i++) {
     parseDataByDays(data[i]);
     parseDataByVideoLength(data[i]);
