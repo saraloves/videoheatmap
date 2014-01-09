@@ -8,6 +8,7 @@ $(function(){
     method: 'GET',
     success: function(data){
       createVideo(data);
+      getTitle(data);
     }
   });
 
@@ -20,6 +21,12 @@ $(function(){
     var appView = new App.Views.App({
       collection: videos
     });
+  };
+
+  var getTitle = function(data) {
+    data = data[0];
+    var title = data.video_title;
+    $('.video-title').append(title);
   };
 
   $('.login-button').on('click', function(){
