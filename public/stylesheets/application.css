@@ -405,6 +405,16 @@ form {
   padding-top: 75px;
   background: #f3f3f3;
 }
+.charts-example .section-title {
+  margin-bottom: 70px;
+}
+.charts-example h2 {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 22.5;
+  line-height: 1.40625rem;
+  color: #3498db;
+}
 .heatmap-button {
   display: inline-block;
   background: #ccc;
