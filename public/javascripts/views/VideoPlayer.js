@@ -80,8 +80,8 @@ App.Views.VideoPlayer = Backbone.View.extend({
           .domain([-1, 0, 1])
           .range(["#0000FF", "#B62084", "#FF0020"]);
 
-      d3.select("#" + videoID + ' .vjs-heatmap').selectAll("svg").remove();
-      var response = d3.select("#" + videoID + ' .vjs-heatmap').append("svg")
+      d3.select('.vjs-heatmap').selectAll("svg").remove();
+      var response = d3.select(' .vjs-heatmap').append("svg")
           .attr({
             "width": "100%",
             "height": "10px"
