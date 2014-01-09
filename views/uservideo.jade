@@ -1,0 +1,42 @@
+!!!
+html
+  head
+    title= title
+
+    //- vendor
+    link(rel='stylesheet' href='/components/video.js/video-js.min.css')
+    link(rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css')
+    link(rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,700')
+    link(rel="stylesheet" href="/stylesheets/application.css")
+  body
+
+    //- Templates
+    script(id="videoTemplate" type="text/template")
+      video(id != "<%= id %>" class="video-js vjs-default-skin" width="auto" height="auto" controls)
+        source(type="video/mp4" src!= "<%= url %>")
+
+    div.video-wrapper
+
+    //- Libs
+    script(src='/components/jquery/jquery.js')
+    script(src='/components/underscore/underscore.js')
+    script(src='/components/backbone/backbone.js')
+    script(src='/components/swfobject/swfobject/swfobject.js')
+    script(src='/components/d3/d3.js')
+    script(src='/components/video.js/video.js')
+
+    //- Backbone Models
+    script(src='/javascripts/models/App.js')
+    script(src='/javascripts/models/Vote.js')
+    script(src='/javascripts/models/VideoPlayer.js')
+
+    //- Backbone Collections
+    script(src='/javascripts/collections/VoteList.js')
+    script(src='/javascripts/collections/VideoPlayersList.js')
+
+    //- Backbone Views
+    script(src='/javascripts/views/App.js')
+    script(src='/javascripts/views/VideoPlayer.js')
+
+    //- Init app
+    script(src='/javascripts/uservideo.js')
