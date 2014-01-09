@@ -2,7 +2,16 @@ var monthNames = ['january', 'february', 'march', 'april', 'may', 'june', 'july'
 var monthVotes = {};
 var videoLengthVotes = {};
 
-d3.json('/votes/aaaa', function (error, data) {
+var url = window.location.href;
+var pieces = url.split('/');
+var id = pieces[pieces.length-1];
+
+//fix for demo video
+if(id === ''){
+  id = 'aaaa';
+}
+
+d3.json('/votes/' + id, function (error, data) {
   data = data || [];
   for (var i = 0; i < data.length; i++) {
     parseDataByDays(data[i]);
