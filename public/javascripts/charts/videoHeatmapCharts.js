@@ -7,7 +7,7 @@ var pieces = url.split('/');
 var id = pieces[pieces.length-1];
 
 //fix for demo video
-if(id === ''){
+if(id === '' || id === '#'){
   id = 'aaaa';
 }
 

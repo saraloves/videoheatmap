@@ -16,13 +16,11 @@ var createLineDaysVotesChart = function (voteData) {
       .axisLabel('Days')
     chart.yAxis
       .axisLabel('Quantity of votes')
-
     d3.select('#chart1 svg')
       .datum(data)
       .call(chart);
-
     nv.utils.windowResize(chart.update);
-    chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+    // chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
     return chart;
   });
 };
