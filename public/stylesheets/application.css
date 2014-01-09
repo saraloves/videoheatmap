@@ -270,7 +270,7 @@ img {
 }
 .user-video-wrapper {
   background: #f3f3f3;
-  height: 620px;
+  height: 650px;
 }
 .user-container {
   display: inline;
@@ -379,14 +379,14 @@ form {
   line-height: 1.6875rem;
   list-style: none;
   padding: 0;
-  margin: 0 0 10px;
+  margin: -7px 0 10px;
 }
 .instructions li {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 19.5;
   line-height: 1.21875rem;
-  margin-bottom: 13px;
+  margin-bottom: 12px;
   background: #f3f3f3;
   padding: 12px 10px;
   border-top: 1px solid #dbdbdb;
