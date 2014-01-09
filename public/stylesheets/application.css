@@ -155,6 +155,13 @@ img {
     margin-bottom: 0;
   }
 }
+.instructions .legend {
+  text-align: center;
+  margin: 0 auto;
+}
+.instructions .legend .center {
+  padding: 35%;
+}
 .video-wrapper {
   display: inline;
   float: left;
