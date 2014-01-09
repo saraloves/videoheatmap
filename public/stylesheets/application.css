@@ -401,6 +401,20 @@ form {
 .instructions div {
   text-align: right;
 }
+.charts-example {
+  padding-top: 75px;
+  background: #f3f3f3;
+}
+.charts-example .section-title {
+  margin-bottom: 70px;
+}
+.charts-example h2 {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 22.5;
+  line-height: 1.40625rem;
+  color: #3498db;
+}
 .heatmap-button {
   display: inline-block;
   background: #ccc;
@@ -443,9 +457,6 @@ form {
 }
 .vjs-default-skin .vjs-control-bar {
   height: 4em !important;
-}
-.team-wrapper {
-  background: #f3f3f3;
 }
 .team .section-title {
   margin-top: 0;
@@ -524,7 +535,7 @@ form {
   box-sizing: border-box;
   text-align: center;
   font-family: FontAwesome;
-  background: #fff;
+  background: #f3f3f3;
   padding: 5px;
   display: block;
   width: 27px;
