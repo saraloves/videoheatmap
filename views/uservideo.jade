@@ -7,16 +7,14 @@ html
     link(rel='stylesheet' href='/components/video.js/video-js.min.css')
     link(rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css')
     link(rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,700')
-
-    //- stylesheets
     link(rel="stylesheet" href="/stylesheets/application.css")
-
   body
+
     a.github-fork(href="https://github.com/saraloves/videoheatmap")
       img(src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub")
     .container
       header.main-header
-        img.logo(src="images/logo.png" width="189" height="41")
+        img.logo(src="/images/logo.png" width="189" height="41")
         nav.main-nav
           form(class='login hidden' action='/auth/login' method='post')
             div
@@ -36,18 +34,23 @@ html
           if user
             ul
               li Hello #{user.username}
-              li: a.btn(class="admin-button" href="/admin") Admin
               li: a.btn(class="logout-button" href="/auth/logout") Logout
           else
             ul
               li: a.btn(class="login-button" href="#") Login
               li: a.btn(class="register-button" href="#") Register
 
-        //- adding form to test passport login and registration
-
-
-    block content
-
+      //- Templates
+    .video-container
+        script(id="videoTemplate" type="text/template")
+          video(id != "<%= id %>" class="video-js vjs-default-skin" width="auto" height="auto" controls)
+            source(type="video/mp4" src!= "<%= url %>")
+    .user-video-wrapper
+      div.user-container
+        div.explanation
+          h2 You have been selected to test out Heatvote!
+          div To participate, watch the video and vote thumbs up or thumbs down on moments that you like.  Click on the star to see the votes of all users.  Feel free to navigate around the video and see users' favorite moments.  Find out more at heatvote.com.
+        div.video-wrapper
     .main-footer-wrapper
       .container
         footer.main-footer
@@ -55,11 +58,6 @@ html
             | &copy; Produced at&nbsp;
             a(href="http://www.hackreactor.com/") Hack Reactor
 
-    //- Templates
-    script(id="videoTemplate" type="text/template")
-      video(id != "<%= id %>" class="video-js vjs-default-skin" width="auto" height="auto" controls)
-        source(type="video/mp4" src!= "<%= url %>" + '.mp4')
-        source(type="video/webm" src!= "<%= url %>" + '.webm')
 
     //- Libs
     script(src='/components/jquery/jquery.js')
@@ -83,4 +81,4 @@ html
     script(src='/javascripts/views/VideoPlayer.js')
 
     //- Init app
-    script(src='/javascripts/app.js')
+    script(src='/javascripts/uservideo.js')

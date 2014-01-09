@@ -40,6 +40,7 @@ App.Models.VideoPlayer = Backbone.Model.extend({
   },
 
   createVideo: function(){
+    this.id = this.id.toString();
     var videoPlayer = videojs(this.id, {
       plugins : {
         showHeatButton : {},

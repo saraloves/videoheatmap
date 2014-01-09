@@ -1,3 +1,35 @@
 extends layout
 
 block content
+  .admin
+    .container
+      h1.admin-greeting 
+        div Hello #{user.username}, welcome to your Admin Page!
+        hr
+
+      section.submit
+        h1.section-title Submit Video
+        div Test heatmap with a video of your choice!  Submit link:
+        form(class='video-submit' action='/video' method='post')
+          div
+            label Enter video url: 
+            input(class='submit-vid' type='text' name='url')
+            label Enter video title:
+            input(class='submit-vid' type='text' name='video_title')
+            input(class='btn' type='submit' value='submit')
+
+      section.display-videos
+        h1.section-title Your Videos
+        ul.user-videos
+      section.analytics
+        h1.section-title Your Analytics
+        ul
+          li.graph-container
+            strong View Stats
+            div.graph1
+          li.graph-container
+            strong Voting Stats
+            div.graph2
+
+  script(src='/components/jquery/jquery.js')
+  script(src='/javascripts/admin.js')

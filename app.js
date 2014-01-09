@@ -65,12 +65,15 @@ app.all('/*', function(req, res, next) {
 //route serving
 app.get('/', routes.index);
 app.get('/admin', auth.restrict, routes.admin);
+app.get('/link/:user/:vid_id', routes.uservideo);
 
 //database serving
 app.post('/votes', Vote.createVote);
 app.get('/votes/:vidID', Vote.getVotes);
 app.post('/video', Video.createVideo);
 app.get('/video/:vidID', Video.getVideo);
+app.get('/video', Video.getVideo);
+
 
 //use passport to authenticate any login attempts
 app.post('/auth/register', auth.register);
