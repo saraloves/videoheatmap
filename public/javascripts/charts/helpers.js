@@ -52,10 +52,12 @@ var lengthVotes = function (voteData) {
   var getData = function (type) {
     var data = [];
     for (vote in voteData) {
-      data.push({
-        x: voteData[vote].timestamp,
-        y: (type === 'negative') ? voteData[vote][type] * -1 : voteData[vote][type]
-      });
+      if (voteData[vote][type] !== 0) {
+        data.push({
+          x: voteData[vote].timestamp,
+          y: (type === 'negative') ? voteData[vote][type] * -1 : voteData[vote][type]
+        });
+      }
     }
 
     return data;
