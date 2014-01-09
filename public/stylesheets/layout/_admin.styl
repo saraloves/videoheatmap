@@ -9,10 +9,17 @@
 .admin
   background-color: white
 
-.admin-greeting
+.submit
   div
-    margin: 0 auto
-    text-align: right
+    margin-bottom: 20px
+  label
+    color: #57534a
+  .submit-vid
+    margin-bottom: 5px
+  .btn
+    border: none
+  form
+    float: none
   hr
     position: relative
     display: block
@@ -21,15 +28,19 @@
     border: 0px
     background: #CCCCCC
 
-.submit 
-  label
-    color: #57534a
-  .submit-vid
-    margin: 20px
-  .btn
-    border: none
-  form
-    float: none
+.display-videos
+  width: 40%
+  ul
+    font-size(18)
+    list-style: none
+    padding: 0
+    margin: -7px 0 10px
+  li
+    font-size(13)
+    margin-bottom: 12px
+    background: $gray
+    padding: 12px 10px
+    border: 1px solid darken($gray, 10%)
 
 .analytics
   li
