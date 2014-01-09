@@ -6,11 +6,12 @@ block content
       script(id="videoTemplate" type="text/template")
         video(id != "<%= id %>" class="video-js vjs-default-skin" width="auto" height="auto" controls)
           source(type="video/mp4" src!= "<%= url %>")
+
   .user-video-wrapper
-    div.user-container
-      div.explanation
+    .user-container
+      .explanation
         h2 You have been selected to test out Heatvote!
         div To participate, register, watch the video and vote thumbs up or thumbs down on moments that you like.  Click on the star to see the votes of all users.  Feel free to navigate around the video and see users' favorite moments.  If you want to upload your own videos, check out the admin page.
         br
         div Find out more at heatvote.com.
-      div.video-wrapper
+      .video-wrapper
