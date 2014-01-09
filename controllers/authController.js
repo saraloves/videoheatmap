@@ -2,37 +2,23 @@ var passport = require('passport');
 var PassportLocalStrategy = require('passport-local').Strategy;
 var user = require('../models/User');
 
-var callbacks = function(res, success, message){
-  res.json({
-    success: success,
-    message: message
-  });
-}
-
 var AuthController = {
     // Login a user
-  login: passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/'
-  }),
+  login: passport.authenticate('local'),
   register: function(req, res){
     user.register(req, res);
-  },
-
-  // on Login Success callback
-  loginSuccess: function(req, res){
-    callbacks(res, true, req.session.passport.user);
-  },
-
-  // on Login Failure callback
-  loginFailure: function(req, res){
-    callbacks(res, false, 'Invalid username or password.');
   },
 
   // Log out a user
   logout: function(req, res){
     req.logout();
-    res.redirect('/');
+    var path = req.headers.referer.split('/');
+    var subdomain = path[path.length-1];
+    if(subdomain === 'admin'){
+      res.redirect('/');
+    } else {
+      res.redirect(req.headers.referer);
+    }
   },
   restrict: function(req, res, next){
     if (!req.user) {
@@ -40,6 +26,9 @@ var AuthController = {
     } else {
       next();
     }
+  },
+  redirect: function(req, res) {
+    res.redirect(req.headers.referer);
   }
 };
 
