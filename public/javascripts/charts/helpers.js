@@ -36,12 +36,14 @@ var daysVotes = function (voteData) {
     {
       key: 'Positive Votes',
       values: getData('positive', januaryDays, 'linear'),
-      color: '#0CBE0A'
+      color: '#0CBE0A',
+      disabled: true
     },
     {
       key: 'Negative Votes',
       values: getData('negative', januaryDays, 'linear'),
-      color: '#D62728'
+      color: '#D62728',
+      disabled: true
     }
   ];
 };
