@@ -155,6 +155,13 @@ img {
     margin-bottom: 0;
   }
 }
+.instructions .legend {
+  text-align: center;
+  margin: 0 auto;
+}
+.instructions .legend .center {
+  padding: 35%;
+}
 .video-wrapper {
   display: inline;
   float: left;
@@ -232,11 +239,22 @@ img {
 .admin {
   background-color: #fff;
 }
-.admin-greeting div {
-  margin: 0 auto;
-  text-align: right;
+.submit div {
+  margin-bottom: 20px;
 }
-.admin-greeting hr {
+.submit label {
+  color: #57534a;
+}
+.submit .submit-vid {
+  margin-bottom: 5px;
+}
+.submit .btn {
+  border: none;
+}
+.submit form {
+  float: none;
+}
+.submit hr {
   position: relative;
   display: block;
   width: 980px;
@@ -244,17 +262,27 @@ img {
   border: 0px;
   background: #ccc;
 }
-.submit label {
-  color: #57534a;
+.display-videos {
+  width: 40%;
 }
-.submit .submit-vid {
-  margin: 20px;
+.display-videos ul {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 27;
+  line-height: 1.6875rem;
+  list-style: none;
+  padding: 0;
+  margin: -7px 0 10px;
 }
-.submit .btn {
-  border: none;
-}
-.submit form {
-  float: none;
+.display-videos li {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 19.5;
+  line-height: 1.21875rem;
+  margin-bottom: 12px;
+  background: #f3f3f3;
+  padding: 12px 10px;
+  border: 1px solid #dbdbdb;
 }
 .analytics li {
   text-decoration: none;
@@ -267,6 +295,64 @@ img {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+}
+.admin-video-wrapper {
+  height: 520px;
+  background: #f3f3f3;
+}
+.admin-container {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  *width: 64.58333333333334% -correction;
+  *margin: 0 1.0416666666666665% -correction;
+  margin-left: 17.708333333333336%;
+  margin-top: 20px;
+}
+.admin-container .video-wrapper {
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+.admin-container .video-wrapper .video {
+  margin: 0 auto;
+}
+.admin {
+  width: 100%;
+}
+.video-wrapper {
+  float: left;
+  z-index: 10;
+  margin: 0;
+  padding: 40px 0 40px 0;
+}
+.explanation {
+  float: right;
+}
+.admin-analytics {
+  height: 1250px;
+  background: #fff;
+}
+.admin-analytics .section-title {
+  margin-top: 20px;
+}
+.admin-analytics .admin-analytics-wrapper {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  *width: 64.58333333333334% -correction;
+  *margin: 0 1.0416666666666665% -correction;
+  margin-left: 17.708333333333336%;
+}
+.admin-analytics .admin-analytics-wrapper #chart1 {
+  background: #fff;
+}
+.admin-analytics .admin-analytics-wrapper #chart2 {
+  background: #fff;
 }
 .user-video-wrapper {
   background: #f3f3f3;
@@ -406,7 +492,7 @@ form {
   background: #f3f3f3;
 }
 .charts-example .section-title {
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 .charts-example h2 {
   font-size: 15px;

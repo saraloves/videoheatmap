@@ -8,8 +8,6 @@ html
     link(rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css')
     link(rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,700')
     link(rel="stylesheet" href="/stylesheets/application.css")
-    link(rel="stylesheet" href="/components/nvd3/nv.d3.min.css")
-
   body
 
     a.github-fork(href="https://github.com/saraloves/videoheatmap")
@@ -48,20 +46,14 @@ html
         script(id="videoTemplate" type="text/template")
           video(id != "<%= id %>" class="video-js vjs-default-skin" width="auto" height="auto" controls)
             source(type="video/mp4" src!= "<%= url %>")
-    .admin-video-wrapper
-      div.admin-container
-        h1.section-title Your Video
+    .user-video-wrapper
+      div.user-container
+        div.explanation
+          h2 You have been selected to test out Heatvote!
+          div To participate, register, watch the video and vote thumbs up or thumbs down on moments that you like.  Click on the star to see the votes of all users.  Feel free to navigate around the video and see users' favorite moments.  If you want to upload your own videos, check out the admin page.
+          br
+          div Find out more at heatvote.com.
         div.video-wrapper
-    .admin-analytics
-      .admin-analytics-wrapper
-        h1.section-title Your Analytics
-        h2 Babu's Interview
-        #chart1
-          h3 Votes Over Time
-          svg(style="height: 500px")
-        #chart2
-          h3 Voting Distribution over Length of Video
-          svg(style="height: 500px")
     .main-footer-wrapper
       .container
         footer.main-footer
@@ -76,14 +68,6 @@ html
     script(src='/components/backbone/backbone.js')
     script(src='/components/swfobject/swfobject/swfobject.js')
     script(src='/components/d3/d3.js')
-
-    //- NVD3 charts
-    script(src='/components/nvd3/nv.d3.min.js')
-    script(src='/javascripts/charts/helpers.js')
-    script(src='/javascripts/charts/LineDaysVotes.js')
-    script(src='/javascripts/charts/videoLengthVotes.js')
-    script(src='/javascripts/charts/videoHeatmapCharts.js')
-
     script(src='/components/video.js/video.js')
 
     //- Backbone Models
@@ -99,7 +83,5 @@ html
     script(src='/javascripts/views/App.js')
     script(src='/javascripts/views/VideoPlayer.js')
 
-
-
     //- Init app
-    script(src='/javascripts/uservideo.js')
+    script(src='/javascripts/usershare.js')
