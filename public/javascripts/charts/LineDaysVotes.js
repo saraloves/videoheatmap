@@ -11,7 +11,7 @@ var createLineDaysVotesChart = function (voteData) {
       showLegend: true,
       tooltipContent: function (key, y, e, graph) {
         return '<h3>' + key + '</h3>' +
-               '<p>' +  e + ' votes on day ' + y + '</p>' ;
+               '<p>' +  e + ' vote(s) on day ' + y + '</p>' ;
       }
     });
 
