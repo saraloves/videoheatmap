@@ -10,14 +10,21 @@ var createVideoLengthVotesChart = function (voteData) {
           left: 100,
           bottom: 100,
         },
-        showLegend: true
+        showLegend: true,
+        tooltipContent: function (key, y, e, graph) {
+          return '<h3>' + key + '</h3>' +
+                 '<p>' +  e + ' vote(s) on second ' + y + '</p>' ;
+        }
       });
 
     chart.xAxis
       .axisLabel('Time (s)')
     chart.yAxis
       .axisLabel('Quantity of votes')
-      .tickFormat(d3.format(',.1d'));
+      .tickFormat(function (d) {
+        var formatter = d3.format(',.1d');
+        return formatter( (d < 0) ? (d = -d) : d );
+      });
 
     d3.select('#chart2 svg')
       .datum(data)

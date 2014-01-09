@@ -36,12 +36,14 @@ var daysVotes = function (voteData) {
     {
       key: 'Positive Votes',
       values: getData('positive', januaryDays, 'linear'),
-      color: '#0CBE0A'
+      color: '#2CA02C',
+      disabled: true
     },
     {
       key: 'Negative Votes',
       values: getData('negative', januaryDays, 'linear'),
-      color: '#D62728'
+      color: '#D62728',
+      disabled: true
     }
   ];
 };
@@ -50,10 +52,12 @@ var lengthVotes = function (voteData) {
   var getData = function (type) {
     var data = [];
     for (vote in voteData) {
-      data.push({
-        x: voteData[vote].timestamp,
-        y: (type === 'negative') ? voteData[vote][type] * -1 : voteData[vote][type]
-      });
+      if (voteData[vote][type] !== 0) {
+        data.push({
+          x: voteData[vote].timestamp,
+          y: (type === 'negative') ? voteData[vote][type] * -1 : voteData[vote][type]
+        });
+      }
     }
 
     return data;
@@ -63,7 +67,7 @@ var lengthVotes = function (voteData) {
     {
       key: 'Positive Votes',
       values: getData('positive'),
-      color: '#0CBE0A'
+      color: '#2CA02C'
     },
     {
       key: 'Negative Votes',

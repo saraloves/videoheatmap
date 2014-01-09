@@ -8,7 +8,8 @@ var createLineDaysVotesChart = function (voteData) {
         left: 100,
         bottom: 100
       },
-      showLegend: true
+      showLegend: true,
+      useInteractiveGuideline: true
     });
 
     chart.xAxis
