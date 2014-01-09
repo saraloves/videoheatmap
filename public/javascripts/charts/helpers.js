@@ -36,7 +36,7 @@ var daysVotes = function (voteData) {
     {
       key: 'Positive Votes',
       values: getData('positive', januaryDays, 'linear'),
-      color: '#0CBE0A',
+      color: '#2CA02C',
       disabled: true
     },
     {
@@ -65,7 +65,7 @@ var lengthVotes = function (voteData) {
     {
       key: 'Positive Votes',
       values: getData('positive'),
-      color: '#0CBE0A'
+      color: '#2CA02C'
     },
     {
       key: 'Negative Votes',
