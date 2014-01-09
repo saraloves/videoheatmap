@@ -24,7 +24,6 @@ App.Views.VideoPlayer = Backbone.View.extend({
   },
 
   keyCreateVote: function(e) {
-    console.log("I'm being invoked");
     var id = this.model.id;
     var timeStamp = this.model.attributes.videoPlayer.currentTime();
     var vote;

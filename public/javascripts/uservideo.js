@@ -22,4 +22,20 @@ $(function(){
     });
   };
 
+  $('.login-button').on('click', function(){
+    $('.login-button').addClass('hidden');
+    $('.register-button').addClass('hidden');
+    $('.login').removeClass('hidden');
+  });
+
+  $('.register-button').on('click', function(){
+    $('.login-button').addClass('hidden');
+    $('.register-button').addClass('hidden');
+    $('.register').removeClass('hidden');
+  });
+
+  $('form').on('submit', function(){
+    $('form').addClass('hidden');
+  });
+
 });

@@ -268,6 +268,41 @@ img {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
+.user-video-wrapper {
+  background: #f3f3f3;
+  height: 620px;
+}
+.user-container {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  *width: 64.58333333333334% -correction;
+  *margin: 0 1.0416666666666665% -correction;
+  margin-left: 17.708333333333336%;
+  margin-top: 20px;
+}
+.user-container .video-wrapper {
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+.user-container .video-wrapper .video {
+  margin: 0 auto;
+}
+.user {
+  width: 100%;
+}
+.video-wrapper {
+  float: left;
+  z-index: 10;
+  margin: 0;
+  padding: 40px 0 40px 0;
+}
+.explanation {
+  float: right;
+}
 .main-nav {
   margin-top: 80px;
   text-align: center;

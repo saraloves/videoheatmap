@@ -36,6 +36,7 @@ html
           if user
             ul
               li Hello #{user.username}
+              li: a.btn(class="admin-button" href="/admin") Admin
               li: a.btn(class="logout-button" href="/auth/logout") Logout
           else
             ul
