@@ -8,7 +8,11 @@ var createLineDaysVotesChart = function (voteData) {
         left: 100,
         bottom: 100
       },
-      showLegend: true
+      showLegend: true,
+      tooltipContent: function (key, y, e, graph) {
+        return '<h3>' + key + '</h3>' +
+               '<p>' +  e + ' votes on day ' + y + '</p>' ;
+      }
     });
 
     chart.xAxis
