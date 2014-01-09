@@ -401,6 +401,10 @@ form {
 .instructions div {
   text-align: right;
 }
+.charts-example {
+  padding-top: 75px;
+  background: #f3f3f3;
+}
 .heatmap-button {
   display: inline-block;
   background: #ccc;
@@ -443,9 +447,6 @@ form {
 }
 .vjs-default-skin .vjs-control-bar {
   height: 4em !important;
-}
-.team-wrapper {
-  background: #f3f3f3;
 }
 .team .section-title {
   margin-top: 0;
