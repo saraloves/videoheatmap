@@ -77,10 +77,8 @@ app.get('/video', Video.getVideo);
 
 //use passport to authenticate any login attempts
 app.post('/auth/register', auth.register);
-app.post('/auth/login', auth.login);
+app.post('/auth/login', auth.login, auth.redirect);
 app.get('/auth/logout', auth.logout);
-app.get('/auth/login/success', auth.loginSuccess);
-app.get('/auth/login/failure', auth.loginFailure);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
