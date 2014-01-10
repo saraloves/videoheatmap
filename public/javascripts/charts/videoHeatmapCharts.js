@@ -2,7 +2,16 @@ var monthNames = ['january', 'february', 'march', 'april', 'may', 'june', 'july'
 var monthVotes = {};
 var videoLengthVotes = {};
 
-d3.json('/votes/aaaa', function (error, data) {
+var url = window.location.href;
+var pieces = url.split('/');
+var id = pieces[pieces.length-1];
+id = id.replace(/\b\#\w+/g, '');
+//fix for demo video
+if(id === ''){
+  id = 'aaaa';
+}
+
+d3.json('/votes/' + id, function (error, data) {
   for (var i = 0; i < data.length; i++) {
     parseDataByDays(data[i]);
     parseDataByVideoLength(data[i]);
@@ -41,7 +50,7 @@ var parseDataByDays = function (entry) {
   votes.all += 1;
   entry.vote === 1 ? votes.positive += 1 : votes.negative += 1;
   votes.x = monthDay;
-  votes.y = votes.all;
+  votes.y = votes.all || 0;
 };
 
 var createMonth = function () {
