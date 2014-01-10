@@ -1,4 +1,4 @@
-extends layout
+extends adminlayout
 
 block content
   .admin
@@ -10,6 +10,7 @@ block content
           div
             label Enter video url
             br
+            label Enter video url:
             input(class='submit-vid' type='text' name='url')
             br
             label Enter video title
@@ -22,17 +23,3 @@ block content
       section.display-videos
         h1.section-title Your Videos
         ul.user-videos
-      //- section.analytics
-      //-   h1.section-title Your Analytics
-      //-   h2 Babu's Interview
-      //-   #chart1
-      //-     h3 Votes Over Time
-      //-     svg(style="height: 500px")
-
-      //-   #chart2
-      //-     h3 Voting Distribution over Length of Video
-      //-     svg(style="height: 500px")
-
-
-  script(src='/components/jquery/jquery.js')
-  script(src='/javascripts/admin.js')
