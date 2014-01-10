@@ -26,7 +26,7 @@ html
               input.input(type='text' name='username')
               label Password
               input.input(type='password' name='password')
-              input.btn(type='submit' value='Login') Login
+              input.btn(type='submit' value='Login')
 
           form(class='register hidden' action='/auth/register' method='post')
             div
@@ -34,7 +34,7 @@ html
               input.input(type='text' name='username')
               label New Password
               input.input(type='password' name='password')
-              input.btn(type='submit' value='Register') Register
+              input.btn(type='submit' value='Register')
           if user
             ul
               li Hello #{user.username}
