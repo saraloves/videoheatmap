@@ -1,0 +1,686 @@
+[
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 1,
+    "vote": 1,
+    "id": 1,
+    "createdAt": "2014-01-04T02:56:51.904Z",
+    "updatedAt": "2014-01-04T02:56:51.906Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 1,
+    "vote": -1,
+    "id": 2,
+    "createdAt": "2014-01-04T02:57:04.405Z",
+    "updatedAt": "2014-01-04T02:57:04.406Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 10,
+    "vote": 1,
+    "id": 3,
+    "createdAt": "2014-01-04T05:24:26.416Z",
+    "updatedAt": "2014-01-04T05:24:26.418Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 10,
+    "vote": -1,
+    "id": 4,
+    "createdAt": "2014-01-04T05:24:52.723Z",
+    "updatedAt": "2014-01-04T05:24:52.724Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 1,
+    "vote": 1,
+    "id": 5,
+    "createdAt": "2014-01-04T05:25:22.151Z",
+    "updatedAt": "2014-01-04T05:25:22.152Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 5,
+    "vote": 1,
+    "id": 6,
+    "createdAt": "2014-01-06T05:47:16.596Z",
+    "updatedAt": "2014-01-06T05:47:16.598Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 19,
+    "vote": -1,
+    "id": 7,
+    "createdAt": "2014-01-06T05:47:31.480Z",
+    "updatedAt": "2014-01-06T05:47:31.481Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 20,
+    "vote": 1,
+    "id": 8,
+    "createdAt": "2014-01-06T05:47:31.664Z",
+    "updatedAt": "2014-01-06T05:47:31.665Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 21,
+    "vote": -1,
+    "id": 9,
+    "createdAt": "2014-01-06T05:47:32.060Z",
+    "updatedAt": "2014-01-06T05:47:32.061Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 21,
+    "vote": 1,
+    "id": 10,
+    "createdAt": "2014-01-06T05:47:32.783Z",
+    "updatedAt": "2014-01-06T05:47:32.784Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 22,
+    "vote": -1,
+    "id": 11,
+    "createdAt": "2014-01-06T05:47:33.158Z",
+    "updatedAt": "2014-01-06T05:47:33.160Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 6,
+    "vote": 1,
+    "id": 12,
+    "createdAt": "2014-01-06T05:59:01.278Z",
+    "updatedAt": "2014-01-06T05:59:01.280Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 2,
+    "vote": 1,
+    "id": 13,
+    "createdAt": "2014-01-06T06:19:04.240Z",
+    "updatedAt": "2014-01-06T06:19:04.242Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 4,
+    "vote": 1,
+    "id": 14,
+    "createdAt": "2014-01-06T06:20:00.754Z",
+    "updatedAt": "2014-01-06T06:20:00.756Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 8,
+    "vote": 1,
+    "id": 15,
+    "createdAt": "2014-01-06T06:20:05.489Z",
+    "updatedAt": "2014-01-06T06:20:05.490Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 13,
+    "vote": -1,
+    "id": 16,
+    "createdAt": "2014-01-06T06:20:09.614Z",
+    "updatedAt": "2014-01-06T06:20:09.614Z"
+  },
+  {
+    "user_id": "joao",
+    "video_id": "aaaa",
+    "timestamp": 16,
+    "vote": 1,
+    "id": 17,
+    "createdAt": "2014-01-06T06:23:51.552Z",
+    "updatedAt": "2014-01-06T06:23:51.553Z"
+  },
+  {
+    "user_id": "joao",
+    "video_id": "aaaa",
+    "timestamp": 33,
+    "vote": 1,
+    "id": 18,
+    "createdAt": "2014-01-06T06:24:09.598Z",
+    "updatedAt": "2014-01-06T06:24:09.600Z"
+  },
+  {
+    "user_id": "joao",
+    "video_id": "aaaa",
+    "timestamp": 37,
+    "vote": -1,
+    "id": 19,
+    "createdAt": "2014-01-06T06:24:12.484Z",
+    "updatedAt": "2014-01-06T06:24:12.484Z"
+  },
+  {
+    "user_id": "joao",
+    "video_id": "aaaa",
+    "timestamp": 39,
+    "vote": -1,
+    "id": 20,
+    "createdAt": "2014-01-06T06:24:14.502Z",
+    "updatedAt": "2014-01-06T06:24:14.503Z"
+  },
+  {
+    "user_id": "joao",
+    "video_id": "aaaa",
+    "timestamp": 6,
+    "vote": 1,
+    "id": 21,
+    "createdAt": "2014-01-06T06:24:25.609Z",
+    "updatedAt": "2014-01-06T06:24:25.609Z"
+  },
+  {
+    "user_id": "joao",
+    "video_id": "aaaa",
+    "timestamp": 8,
+    "vote": 1,
+    "id": 22,
+    "createdAt": "2014-01-06T06:24:26.423Z",
+    "updatedAt": "2014-01-06T06:24:26.424Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 3,
+    "vote": 1,
+    "id": 23,
+    "createdAt": "2014-01-06T06:27:37.949Z",
+    "updatedAt": "2014-01-06T06:27:37.953Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 28,
+    "vote": 1,
+    "id": 24,
+    "createdAt": "2014-01-06T06:38:26.519Z",
+    "updatedAt": "2014-01-06T06:38:26.522Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 25,
+    "vote": 1,
+    "id": 25,
+    "createdAt": "2014-01-06T06:38:37.870Z",
+    "updatedAt": "2014-01-06T06:38:37.871Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 27,
+    "vote": -1,
+    "id": 26,
+    "createdAt": "2014-01-06T06:38:39.007Z",
+    "updatedAt": "2014-01-06T06:38:39.008Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 30,
+    "vote": -1,
+    "id": 27,
+    "createdAt": "2014-01-06T06:38:42.904Z",
+    "updatedAt": "2014-01-06T06:38:42.904Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 26,
+    "vote": -1,
+    "id": 28,
+    "createdAt": "2014-01-06T06:40:04.016Z",
+    "updatedAt": "2014-01-06T06:40:04.019Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 7,
+    "vote": -1,
+    "id": 29,
+    "createdAt": "2014-01-06T06:40:42.415Z",
+    "updatedAt": "2014-01-06T06:40:42.415Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 9,
+    "vote": 1,
+    "id": 30,
+    "createdAt": "2014-01-06T06:40:44.222Z",
+    "updatedAt": "2014-01-06T06:40:44.223Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 4,
+    "vote": -1,
+    "id": 31,
+    "createdAt": "2014-01-07T04:37:11.482Z",
+    "updatedAt": "2014-01-07T04:37:11.485Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 5,
+    "vote": -1,
+    "id": 32,
+    "createdAt": "2014-01-07T04:37:13.017Z",
+    "updatedAt": "2014-01-07T04:37:13.017Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 7,
+    "vote": 1,
+    "id": 33,
+    "createdAt": "2014-01-07T04:37:15.188Z",
+    "updatedAt": "2014-01-07T04:37:15.188Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 8,
+    "vote": -1,
+    "id": 34,
+    "createdAt": "2014-01-07T04:37:58.500Z",
+    "updatedAt": "2014-01-07T04:37:58.503Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 12,
+    "vote": -1,
+    "id": 35,
+    "createdAt": "2014-01-07T04:38:03.021Z",
+    "updatedAt": "2014-01-07T04:38:03.021Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 14,
+    "vote": 1,
+    "id": 36,
+    "createdAt": "2014-01-07T04:38:04.101Z",
+    "updatedAt": "2014-01-07T04:38:04.102Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 9,
+    "vote": -1,
+    "id": 37,
+    "createdAt": "2014-01-07T18:43:13.261Z",
+    "updatedAt": "2014-01-07T18:43:13.266Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 16,
+    "vote": 1,
+    "id": 38,
+    "createdAt": "2014-01-07T18:43:20.985Z",
+    "updatedAt": "2014-01-07T18:43:20.985Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 23,
+    "vote": 1,
+    "id": 39,
+    "createdAt": "2014-01-07T18:43:28.376Z",
+    "updatedAt": "2014-01-07T18:43:28.378Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 24,
+    "vote": 1,
+    "id": 40,
+    "createdAt": "2014-01-07T18:43:28.579Z",
+    "updatedAt": "2014-01-07T18:43:28.580Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 23,
+    "vote": 1,
+    "id": 41,
+    "createdAt": "2014-01-07T18:43:28.554Z",
+    "updatedAt": "2014-01-07T18:43:28.555Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 24,
+    "vote": 1,
+    "id": 42,
+    "createdAt": "2014-01-07T18:43:28.616Z",
+    "updatedAt": "2014-01-07T18:43:28.617Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 4,
+    "vote": 1,
+    "id": 43,
+    "createdAt": "2014-01-07T21:20:12.493Z",
+    "updatedAt": "2014-01-07T21:20:12.495Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 12,
+    "vote": 1,
+    "id": 44,
+    "createdAt": "2014-01-07T21:20:16.793Z",
+    "updatedAt": "2014-01-07T21:20:16.794Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 36,
+    "vote": 1,
+    "id": 45,
+    "createdAt": "2014-01-07T22:56:18.484Z",
+    "updatedAt": "2014-01-07T22:56:18.487Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 39,
+    "vote": 1,
+    "id": 46,
+    "createdAt": "2014-01-07T22:56:36.295Z",
+    "updatedAt": "2014-01-07T22:56:36.297Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 20,
+    "vote": -1,
+    "id": 47,
+    "createdAt": "2014-01-08T19:31:43.870Z",
+    "updatedAt": "2014-01-08T19:31:43.871Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 32,
+    "vote": -1,
+    "id": 48,
+    "createdAt": "2014-01-08T19:31:48.979Z",
+    "updatedAt": "2014-01-08T19:31:48.980Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 39,
+    "vote": -1,
+    "id": 49,
+    "createdAt": "2014-01-08T19:31:51.117Z",
+    "updatedAt": "2014-01-08T19:31:51.117Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 40,
+    "vote": -1,
+    "id": 50,
+    "createdAt": "2014-01-08T19:31:51.535Z",
+    "updatedAt": "2014-01-08T19:31:51.535Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 31,
+    "vote": -1,
+    "id": 51,
+    "createdAt": "2014-01-08T19:31:52.459Z",
+    "updatedAt": "2014-01-08T19:31:52.463Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 43,
+    "vote": -1,
+    "id": 52,
+    "createdAt": "2014-01-08T19:31:55.303Z",
+    "updatedAt": "2014-01-08T19:31:55.304Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 43,
+    "vote": -1,
+    "id": 53,
+    "createdAt": "2014-01-08T19:31:55.462Z",
+    "updatedAt": "2014-01-08T19:31:55.463Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 27,
+    "vote": -1,
+    "id": 54,
+    "createdAt": "2014-01-08T19:31:54.075Z",
+    "updatedAt": "2014-01-08T19:31:54.076Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 18,
+    "vote": -1,
+    "id": 55,
+    "createdAt": "2014-01-08T19:31:55.454Z",
+    "updatedAt": "2014-01-08T19:31:55.454Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 19,
+    "vote": -1,
+    "id": 56,
+    "createdAt": "2014-01-08T19:31:57.339Z",
+    "updatedAt": "2014-01-08T19:31:57.339Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 32,
+    "vote": -1,
+    "id": 57,
+    "createdAt": "2014-01-08T19:31:59.238Z",
+    "updatedAt": "2014-01-08T19:31:59.238Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 28,
+    "vote": -1,
+    "id": 58,
+    "createdAt": "2014-01-08T19:32:05.319Z",
+    "updatedAt": "2014-01-08T19:32:05.319Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 28,
+    "vote": 1,
+    "id": 59,
+    "createdAt": "2014-01-08T19:32:27.236Z",
+    "updatedAt": "2014-01-08T19:32:27.237Z"
+  },
+  {
+    "user_id": "andrew",
+    "video_id": "aaaa",
+    "timestamp": 20,
+    "vote": 1,
+    "id": 60,
+    "createdAt": "2014-01-08T19:32:32.378Z",
+    "updatedAt": "2014-01-08T19:32:32.378Z"
+  },
+  {
+    "user_id": "andrew",
+    "video_id": "aaaa",
+    "timestamp": 28,
+    "vote": 1,
+    "id": 61,
+    "createdAt": "2014-01-08T19:32:33.513Z",
+    "updatedAt": "2014-01-08T19:32:33.513Z"
+  },
+  {
+    "user_id": "andrew",
+    "video_id": "aaaa",
+    "timestamp": 33,
+    "vote": 1,
+    "id": 62,
+    "createdAt": "2014-01-08T19:32:36.475Z",
+    "updatedAt": "2014-01-08T19:32:36.476Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 30,
+    "vote": -1,
+    "id": 63,
+    "createdAt": "2014-01-08T19:32:36.255Z",
+    "updatedAt": "2014-01-08T19:32:36.255Z"
+  },
+  {
+    "user_id": "andrew",
+    "video_id": "aaaa",
+    "timestamp": 42,
+    "vote": -1,
+    "id": 64,
+    "createdAt": "2014-01-08T19:32:39.421Z",
+    "updatedAt": "2014-01-08T19:32:39.421Z"
+  },
+  {
+    "user_id": "andrew",
+    "video_id": "aaaa",
+    "timestamp": 45,
+    "vote": -1,
+    "id": 65,
+    "createdAt": "2014-01-08T19:32:44.325Z",
+    "updatedAt": "2014-01-08T19:32:44.326Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 20,
+    "vote": -1,
+    "id": 66,
+    "createdAt": "2014-01-08T19:32:52.796Z",
+    "updatedAt": "2014-01-08T19:32:52.798Z"
+  },
+  {
+    "user_id": "lindsey",
+    "video_id": "aaaa",
+    "timestamp": 20,
+    "vote": -1,
+    "id": 67,
+    "createdAt": "2014-01-08T19:32:52.965Z",
+    "updatedAt": "2014-01-08T19:32:52.966Z"
+  },
+  {
+    "user_id": "ryan",
+    "video_id": "aaaa",
+    "timestamp": 19,
+    "vote": 1,
+    "id": 68,
+    "createdAt": "2014-01-08T19:33:46.117Z",
+    "updatedAt": "2014-01-08T19:33:46.118Z"
+  },
+  {
+    "user_id": "ryan",
+    "video_id": "aaaa",
+    "timestamp": 20,
+    "vote": -1,
+    "id": 69,
+    "createdAt": "2014-01-08T19:33:46.697Z",
+    "updatedAt": "2014-01-08T19:33:46.697Z"
+  },
+  {
+    "user_id": "ryan",
+    "video_id": "aaaa",
+    "timestamp": 19,
+    "vote": -1,
+    "id": 70,
+    "createdAt": "2014-01-08T19:33:48.124Z",
+    "updatedAt": "2014-01-08T19:33:48.125Z"
+  },
+  {
+    "user_id": "ryan",
+    "video_id": "aaaa",
+    "timestamp": 32,
+    "vote": -1,
+    "id": 71,
+    "createdAt": "2014-01-08T19:33:54.294Z",
+    "updatedAt": "2014-01-08T19:33:54.294Z"
+  },
+  {
+    "user_id": "ryan",
+    "video_id": "aaaa",
+    "timestamp": 31,
+    "vote": -1,
+    "id": 72,
+    "createdAt": "2014-01-08T19:33:59.048Z",
+    "updatedAt": "2014-01-08T19:33:59.048Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 25,
+    "vote": -1,
+    "id": 79,
+    "createdAt": "2014-01-09T03:02:56.205Z",
+    "updatedAt": "2014-01-09T03:02:56.207Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 34,
+    "vote": 1,
+    "id": 80,
+    "createdAt": "2014-01-09T03:03:06.418Z",
+    "updatedAt": "2014-01-09T03:03:06.419Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 31,
+    "vote": -1,
+    "id": 81,
+    "createdAt": "2014-01-09T03:03:19.780Z",
+    "updatedAt": "2014-01-09T03:03:19.781Z"
+  },
+  {
+    "user_id": "sara",
+    "video_id": "aaaa",
+    "timestamp": 11,
+    "vote": 1,
+    "id": 82,
+    "createdAt": "2014-01-09T03:25:52.730Z",
+    "updatedAt": "2014-01-09T03:25:52.732Z"
+  }
+]
