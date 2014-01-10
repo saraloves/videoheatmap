@@ -7,7 +7,7 @@ exports.admin = function(req, res){
 }
 
 exports.uservideo = function(req, res){
-  res.render('uservideo', { title: 'Heat Vote - View Video', user: req.user, video_id: req.params.vid_id });
+  res.render('uservideo', { title: 'Heat Vote - View Video', user: req.user, video_id: req.params.vid_id, page: 'uservideo'});
 }
 
 exports.usershare = function(req, res){
