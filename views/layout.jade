@@ -101,8 +101,10 @@ html
     //- Init app
     if page === 'home'
       script(src='/javascripts/app.js')
+      script(src='/javascripts/toggleBtn.js')
     else if page === 'usershare' || page === 'uservideo'
       script(src='/javascripts/userActions.js')
+      script(src='/javascripts/toggleBtn.js')
     else if page === 'admin'
       script(src='/javascripts/admin.js')
 
