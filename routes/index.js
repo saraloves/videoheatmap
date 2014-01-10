@@ -3,7 +3,7 @@ exports.index = function(req, res){
 };
 
 exports.admin = function(req, res){
-  res.render('admin', { title: 'Heat Vote - Admin Panel', user: req.user });
+  res.render('admin', { title: 'Heat Vote - Admin Panel', user: req.user, page: 'admin' });
 }
 
 exports.uservideo = function(req, res){
