@@ -8,7 +8,9 @@ $(function(){
     method: 'GET',
     success: function(data){
       createVideo(data);
-      getTitle(data);
+      if ($('body').hasClass('uservideo')) {
+        getTitle(data);
+      }
     }
   });
 
@@ -24,6 +26,7 @@ $(function(){
   };
 
   var getTitle = function(data) {
+    console.log('ae');
     data = data[0];
     var title = data.video_title;
     $('.video-title').append(title);
@@ -50,5 +53,4 @@ $(function(){
   form.on('submit', function(){
     form.addClass('hidden');
   });
-
 });
