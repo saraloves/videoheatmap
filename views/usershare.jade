@@ -1,12 +1,6 @@
 extends layout
 
 block content
-  //- Templates
-  .video-container
-      script(id="videoTemplate" type="text/template")
-        video(id != "<%= id %>" class="video-js vjs-default-skin" width="auto" height="auto" controls)
-          source(type="video/mp4" src!= "<%= url %>")
-
   .user-video-wrapper
     .user-container
       .explanation
