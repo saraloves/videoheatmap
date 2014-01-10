@@ -239,6 +239,11 @@ img {
 .admin {
   background-color: #fff;
 }
+.admin h1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0;
+}
 .submit div {
   margin-bottom: 20px;
 }
@@ -261,9 +266,11 @@ img {
   height: 1px;
   border: 0px;
   background: #ccc;
+  margin: 50px 0 0 0;
 }
 .display-videos {
   width: 40%;
+  padding-bottom: 50px;
 }
 .display-videos ul {
   font-size: 18px;
@@ -284,20 +291,12 @@ img {
   padding: 12px 10px;
   border: 1px solid #dbdbdb;
 }
-.analytics li {
-  text-decoration: none;
-  display: inline-block;
-}
-.graph-container {
-  border: 1px solid #b8b8b8;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+.display-videos span {
+  display: block;
+  padding-left: 10px;
 }
 .admin-video-wrapper {
-  height: 520px;
+  height: 540px;
   background: #f3f3f3;
 }
 .admin-container {
@@ -309,12 +308,12 @@ img {
   *width: 64.58333333333334% -correction;
   *margin: 0 1.0416666666666665% -correction;
   margin-left: 17.708333333333336%;
-  margin-top: 20px;
 }
 .admin-container .video-wrapper {
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   display: block;
+  padding: 0;
 }
 .admin-container .video-wrapper .video {
   margin: 0 auto;
@@ -326,7 +325,6 @@ img {
   float: left;
   z-index: 10;
   margin: 0;
-  padding: 40px 0 40px 0;
 }
 .explanation {
   float: right;
@@ -334,9 +332,6 @@ img {
 .admin-analytics {
   height: 1250px;
   background: #fff;
-}
-.admin-analytics .section-title {
-  margin-top: 20px;
 }
 .admin-analytics .admin-analytics-wrapper {
   display: inline;
@@ -353,6 +348,9 @@ img {
 }
 .admin-analytics .admin-analytics-wrapper #chart2 {
   background: #fff;
+}
+.video-title {
+  margin: 50px auto;
 }
 .user-video-wrapper {
   background: #f3f3f3;
@@ -546,6 +544,7 @@ form {
 }
 .vjs-default-skin .vjs-control-bar {
   height: 4em !important;
+  background: #000;
 }
 .team .section-title {
   margin-top: 0;

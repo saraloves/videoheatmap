@@ -1,15 +1,15 @@
 .admin-video-wrapper
-  height: 520px
+  height: 540px
   background: $gray
 
 .admin-container
   column(8)
   push(2)
-  margin-top: 20px
   .video-wrapper
     width: 100%
-    margin: auto
+    margin: 0 auto
     display: block
+    padding: 0
     .video
       margin: 0 auto
 
@@ -19,15 +19,12 @@
     float: left
     z-index: 10
     margin: 0
-    padding: 40px 0 40px 0
   .explanation
     float: right
 
 .admin-analytics
   height: 1250px
   background: white
-  .section-title
-    margin-top: 20px
   .admin-analytics-wrapper
     column(8)
     push(2)
@@ -36,3 +33,5 @@
     #chart2
       background: white
 
+.video-title
+  margin: 50px auto

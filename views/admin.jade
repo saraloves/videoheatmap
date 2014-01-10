@@ -1,10 +1,8 @@
-extends layout
+extends adminlayout
 
 block content
   .admin
     .container
-      h1.admin-greeting
-
       section.submit
         h1.section-title Submit Video
         div Test heatmap with a video of your choice!  Submit link (currently only accepting videos in MP4 format):
@@ -24,13 +22,3 @@ block content
       section.display-videos
         h1.section-title Your Videos
         ul.user-videos
-      //- section.analytics
-      //-   h1.section-title Your Analytics
-      //-   h2 Babu's Interview
-      //-   #chart1
-      //-     h3 Votes Over Time
-      //-     svg(style="height: 500px")
-
-      //-   #chart2
-      //-     h3 Voting Distribution over Length of Video
-      //-     svg(style="height: 500px")

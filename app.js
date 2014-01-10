@@ -66,7 +66,7 @@ app.all('/*', function(req, res, next) {
 app.get('/', routes.index);
 app.get('/admin', auth.restrict, routes.admin);
 app.get('/link/:user/:vid_id', routes.uservideo);
-app.get('/link/:user/:vid_id/share', routes.usershare);
+app.get('/link/share/:user/:vid_id', routes.usershare);
 
 
 //database serving
