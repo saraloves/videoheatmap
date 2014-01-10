@@ -61,6 +61,14 @@ html
         source(type="video/mp4" src!= "<%= url %>")
         source(type="video/webm" src!= "<%= url %>")
 
+    script(id="listVideoTemplate" type="text/template")
+      li
+        span.vid-link
+          a(href != "/link/<%= user_id %>/<%= id %>") <%= video_title %>
+        span
+          | Share your video:&nbsp;
+          a(href != "/link/share/<%= user_id %>/<%= id %>") /link/share/<%= user_id %>/<%= id %>
+
     //- Libs
     script(src='/components/jquery/jquery.js')
     script(src='/components/underscore/underscore.js')

@@ -9,8 +9,9 @@ $(function(){
 
   var appendInfo = function(data){
     var userVideos = $('.user-videos');
+    var listItem = _.template( $('#listVideoTemplate').html() );
     for (var i = 0; i < data.length; i++) {
-      userVideos.append('<li><span class=\'vid-link\'><a href=/link/'+ data[i].user_id + '/' + data[i].id + '>' + data[i].video_title +'</a></span><span>' + 'Share your video: <a href=/link/share/' + data[i].user_id + '/' + data[i].id + '>/link/share/' + data[i].user_id + '/' + data[i].id + '</a></span></li>');
+      userVideos.append(listItem( data[i] ));
     }
   };
 
