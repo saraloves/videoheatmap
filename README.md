@@ -2,13 +2,13 @@
 
 ## Description
 
-Custom HTML5 video player which tracks positive or negative votes on exact moments of the video and generates analytics for the uploader.
+Custom HTML5 video player which tracks all positive and negative votes on exact moments of a video and generates analytics for the uploader.
 
 ![player](http://i.imgur.com/0aGYQO5.png)
 
 ## How to Use
 
-Navigate to http://heatvote.com and follow the instructions on the home page.  To experience heatvote's functionality with your own videos, create an account and submit a video on the admin page.  Then you can view your video with our player and analytics system.  Test with your users: we provide a demo link of your video for you to share.
+Navigate to http://heatvote.com and follow the instructions on the home page.  To experience heatvote's functionality with your own videos, create an account and submit a video on the admin page.  You can then view your video with our player and view our custom analytics system.  Test with your users: we provide a demo link of your video for you to share with the world.
 
 
 ## Tech Stack
