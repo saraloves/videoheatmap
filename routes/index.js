@@ -1,5 +1,5 @@
 exports.index = function(req, res){
-  res.render('index', { title: 'Heat Vote', user: req.user });
+  res.render('index', { title: 'Heat Vote', user: req.user, page: 'home' });
 };
 
 exports.admin = function(req, res){
@@ -7,9 +7,9 @@ exports.admin = function(req, res){
 }
 
 exports.uservideo = function(req, res){
-  res.render('uservideo', { title: 'Heat Vote - View Video', user: req.user, video_id: req.params.vid_id });
+  res.render('uservideo', { title: 'Heat Vote - View Video', user: req.user, video_id: req.params.vid_id, page: 'uservideo'});
 }
 
 exports.usershare = function(req, res){
-  res.render('usershare', { title: 'Heat Vote - View Video', user: req.user, video_id: req.params.vid_id });
+  res.render('usershare', { title: 'Heat Vote - View Video', user: req.user, video_id: req.params.vid_id, page: 'usershare' });
 }
