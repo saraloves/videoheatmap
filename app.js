@@ -28,7 +28,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon( path.join(__dirname, 'public/images/favicon.ico') ));
-app.use(express.logger('dev'));
+app.use(express.favicon());
 app.use(express.cookieParser('qwertyyui'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -48,11 +48,6 @@ app.use(function (req, res, next) {
   res.locals.login = req.isAuthenticated();
   next();
 });
-
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
 
 app.all('/*', function(req, res, next) {
   if (req.headers.host.match(/^www/) !== null ) {
