@@ -487,6 +487,9 @@ form {
 .instructions div {
   text-align: right;
 }
+.chart svg {
+  height: 400px;
+}
 .charts-example {
   padding-top: 75px;
   background: #f3f3f3;
