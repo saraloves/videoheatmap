@@ -12,7 +12,7 @@ html
     link(rel="stylesheet" href="/stylesheets/application.css")
     link(rel="stylesheet" href="/components/nvd3/nv.d3.min.css")
 
-  body.with-3d-shadow.with-transitions
+  body.with-3d-shadow.with-transitions(class="#{page}")
     a.github-fork(href="https://github.com/saraloves/videoheatmap")
       img(src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub")
     .container
@@ -61,6 +61,14 @@ html
         source(type="video/mp4" src!= "<%= url %>")
         source(type="video/webm" src!= "<%= url %>")
 
+    script(id="listVideoTemplate" type="text/template")
+      li
+        span.vid-link
+          a(href != "/link/<%= user_id %>/<%= id %>") <%= video_title %>
+        span
+          | Share your video:&nbsp;
+          a(href != "/link/share/<%= user_id %>/<%= id %>") /link/share/<%= user_id %>/<%= id %>
+
     //- Libs
     script(src='/components/jquery/jquery.js')
     script(src='/components/underscore/underscore.js')
@@ -93,8 +101,10 @@ html
     //- Init app
     if page === 'home'
       script(src='/javascripts/app.js')
+      script(src='/javascripts/toggleBtn.js')
     else if page === 'usershare' || page === 'uservideo'
-      script(src='/javascripts/uservideo.js')
+      script(src='/javascripts/userActions.js')
+      script(src='/javascripts/toggleBtn.js')
     else if page === 'admin'
       script(src='/javascripts/admin.js')
 
