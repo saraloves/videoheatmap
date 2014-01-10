@@ -29,20 +29,26 @@ $(function(){
     $('.video-title').append(title);
   };
 
-  $('.login-button').on('click', function(){
-    $('.login-button').addClass('hidden');
-    $('.register-button').addClass('hidden');
-    $('.login').removeClass('hidden');
+  var loginBtn = $('.login-button');
+  var registerBtn = $('.register-button');
+  var form = $('form');
+
+  var toggleBtn = function (triggerElement) {
+    loginBtn.addClass('hidden');
+    registerBtn.addClass('hidden');
+    triggerElement.removeClass('hidden');
+  };
+
+  loginBtn.on('click', function(){
+    toggleBtn($('.login'));
   });
 
-  $('.register-button').on('click', function(){
-    $('.login-button').addClass('hidden');
-    $('.register-button').addClass('hidden');
-    $('.register').removeClass('hidden');
+  registerBtn.on('click', function(){
+    toggleBtn($('.register'));
   });
 
-  $('form').on('submit', function(){
-    $('form').addClass('hidden');
+  form.on('submit', function(){
+    form.addClass('hidden');
   });
 
 });
