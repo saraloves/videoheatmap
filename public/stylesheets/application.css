@@ -155,11 +155,18 @@ img {
     margin-bottom: 0;
   }
 }
-.instructions .legend {
+.legend {
   text-align: center;
   margin: 0 auto;
 }
-.instructions .legend .center {
+.legend img {
+  margin: auto;
+}
+.legend p {
+  margin-top: 12px;
+  text-align: right;
+}
+.legend .center {
   padding: 35%;
 }
 .video-wrapper {
@@ -463,7 +470,7 @@ form {
   line-height: 1.6875rem;
   list-style: none;
   padding: 0;
-  margin: -7px 0 10px;
+  margin: -7px 0 20px;
 }
 .instructions li {
   font-size: 13px;
@@ -478,12 +485,6 @@ form {
 }
 .instructions strong {
   color: #3498db;
-}
-.instructions img {
-  margin: auto;
-}
-.instructions div {
-  text-align: right;
 }
 .chart svg {
   height: 400px;
