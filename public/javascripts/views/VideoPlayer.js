@@ -6,6 +6,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
 
   initialize: function () {
     this.render();
+    this.fullscreen = false;
     var self = this;
     this.$('video').on('loadedmetadata', function(){
       self.createHeatmap(self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
@@ -35,7 +36,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
         timestamp: timeStamp,
         vote: vote
       });
-      this.createHeatmap(this.model.get('width'), this.model.attributes.videoPlayer.duration(), this.model.id);
+      this.createHeatmap(screen.width, this.model.attributes.videoPlayer.duration(), this.model.id);
       e.preventDefault();
     }
   },
@@ -51,7 +52,12 @@ App.Views.VideoPlayer = Backbone.View.extend({
       timestamp: timeStamp,
       vote: vote
     });
-    this.createHeatmap(this.model.get('width'), this.model.attributes.videoPlayer.duration(), this.model.id);
+    console.log(this.fullscreen);
+    if(this.fullscreen){
+      this.createHeatmap(screen.width, this.model.attributes.videoPlayer.duration(), this.model.id);
+    } else {
+      this.createHeatmap(this.model.get('width'), this.model.attributes.videoPlayer.duration(), this.model.id);
+    }
     e.preventDefault();
   },
 
@@ -162,8 +168,10 @@ App.Views.VideoPlayer = Backbone.View.extend({
       var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
       var event = state ? 'FullscreenOn' : 'FullscreenOff';
       if(event === 'FullscreenOn'){
+        self.fullscreen = true;
         self.createHeatmap(screen.width, self.model.attributes.videoPlayer.duration(), self.model.id);
       } else {
+        self.fullscreen = false;
         self.createHeatmap(self.model.get('width'), self.model.attributes.videoPlayer.duration(), self.model.id);
       }
     });
