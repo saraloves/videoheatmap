@@ -39,5 +39,5 @@ public/components
 ### PhPStorm ###
 .idea/
 
-### Db config ###
+### Config Files ###
 db_config.js
