@@ -98,7 +98,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
         svg.attr("transform",
           "translate(" + d3.event.translate + ")"
           + " scale(" + d3.event.scale + ", 10)");
-      }
+      };
 
       var feMerge = svg.append("svg:filter")
           .attr("id", "glow")
@@ -145,14 +145,14 @@ App.Views.VideoPlayer = Backbone.View.extend({
           .attr("y", 0)
           .attr("width", secondWidth*2)
           .attr("height", height)
-          .attr("mask", function(d) { return "url(#Mask"+ d.key + ")" });
+          .attr("mask", function(d) { return "url(#Mask"+ d.key + ")"; });
 
       heatMap.style("fill", function(d) {
         return colorScale(d.values[0]);
       });
       heatMap.style("opacity", function(d){
         return d.values[1]*15;
-      })
+      });
       heatMap.attr("filter", "url(#glow)");
     });
 

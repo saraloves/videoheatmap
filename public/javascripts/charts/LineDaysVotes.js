@@ -13,9 +13,9 @@ var createLineDaysVotesChart = function (voteData) {
     });
 
     chart.xAxis
-      .axisLabel('Days')
+      .axisLabel('Days');
     chart.yAxis
-      .axisLabel('Quantity of votes')
+      .axisLabel('Quantity of votes');
     d3.select('#chart1 svg')
       .datum(data)
       .call(chart);
