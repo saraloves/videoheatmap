@@ -18,7 +18,7 @@ var createVideoLengthVotesChart = function (voteData) {
       });
 
     chart.xAxis
-      .axisLabel('Time (s)')
+      .axisLabel('Time (s)');
     chart.yAxis
       .axisLabel('Quantity of votes')
       .tickFormat(function (d) {
@@ -31,7 +31,7 @@ var createVideoLengthVotesChart = function (voteData) {
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
-    // chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+    chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
     return chart;
   });
-}
+};

@@ -22,7 +22,7 @@ d3.json('/votes/' + id, function (error, data) {
 });
 
 var parseDataByVideoLength = function (entry) {
-  !!!videoLengthVotes[entry.timestamp] && ( videoLengthVotes[entry.timestamp] = createTimestampVote() );
+  !videoLengthVotes[entry.timestamp] && ( videoLengthVotes[entry.timestamp] = createTimestampVote() );
   var vote = videoLengthVotes[entry.timestamp];
 
   vote.all += 1;
@@ -43,7 +43,7 @@ var parseDataByDays = function (entry) {
   var monthName = monthNames[date.getMonth()];
   var monthDay = date.getDate();
 
-  !!!monthVotes[monthName] && ( monthVotes[monthName] = createMonth() );
+  !monthVotes[monthName] && ( monthVotes[monthName] = createMonth() );
 
   var votes = monthVotes[monthName].days[monthDay];
 

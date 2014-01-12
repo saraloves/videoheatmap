@@ -28,8 +28,13 @@ App.Views.VideoPlayer = Backbone.View.extend({
     var id = this.model.id;
     var timeStamp = this.model.attributes.videoPlayer.currentTime();
     var vote;
-    if (e.keyCode === 38) vote = 1;
-    else if (e.keyCode === 40) vote = -1;
+
+    if (e.keyCode === 38) {
+      vote = 1;
+    } else if (e.keyCode === 40) {
+      vote = -1;
+    }
+
     if (vote) {
       this.model.attributes.votes.create({
         video_id: id,
@@ -104,7 +109,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
         svg.attr("transform",
           "translate(" + d3.event.translate + ")"
           + " scale(" + d3.event.scale + ", 10)");
-      }
+      };
 
       var feMerge = svg.append("svg:filter")
           .attr("id", "glow")
@@ -151,14 +156,14 @@ App.Views.VideoPlayer = Backbone.View.extend({
           .attr("y", 0)
           .attr("width", secondWidth*2)
           .attr("height", height)
-          .attr("mask", function(d) { return "url(#Mask"+ d.key + ")" });
+          .attr("mask", function(d) { return "url(#Mask"+ d.key + ")"; });
 
       heatMap.style("fill", function(d) {
         return colorScale(d.values[0]);
       });
       heatMap.style("opacity", function(d){
         return d.values[1]*15;
-      })
+      });
       heatMap.attr("filter", "url(#glow)");
     });
 
@@ -167,6 +172,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
     $('#' + videoID).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
       var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
       var event = state ? 'FullscreenOn' : 'FullscreenOff';
+
       if(event === 'FullscreenOn'){
         self.fullscreen = true;
         self.createHeatmap(screen.width, self.model.attributes.videoPlayer.duration(), self.model.id);

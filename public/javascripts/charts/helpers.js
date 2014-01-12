@@ -51,6 +51,7 @@ var daysVotes = function (voteData) {
 var lengthVotes = function (voteData) {
   var getData = function (type) {
     var data = [];
+    var vote;
     for (vote in voteData) {
       if (voteData[vote][type] !== 0) {
         data.push({
