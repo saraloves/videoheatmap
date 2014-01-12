@@ -166,6 +166,7 @@ App.Views.VideoPlayer = Backbone.View.extend({
     $('#' + videoID).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
       var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
       var event = state ? 'FullscreenOn' : 'FullscreenOff';
+
       if(event === 'FullscreenOn'){
         self.createHeatmap(screen.width, self.model.attributes.videoPlayer.duration(), self.model.id);
       } else {
