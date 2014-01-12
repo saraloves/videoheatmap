@@ -27,8 +27,13 @@ App.Views.VideoPlayer = Backbone.View.extend({
     var id = this.model.id;
     var timeStamp = this.model.attributes.videoPlayer.currentTime();
     var vote;
-    if (e.keyCode === 38) vote = 1;
-    else if (e.keyCode === 40) vote = -1;
+
+    if (e.keyCode === 38) {
+      vote = 1;
+    } else if (e.keyCode === 40) {
+      vote = -1;
+    }
+
     if (vote) {
       this.model.attributes.votes.create({
         video_id: id,
